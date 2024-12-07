@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://brywffldnj1bk"]
+
+[ext_resource type="PackedScene" uid="uid://132r7jv467og" path="res://scenes/area_2d.tscn" id="1_4skix"]
+[ext_resource type="Script" path="res://scenes/area_2d.gd" id="1_6e53s"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6e53s")
+
+[node name="Area2D" parent="." instance=ExtResource("1_4skix")]
+
+[node name="Area2D2" parent="." instance=ExtResource("1_4skix")]
+position = Vector2(-288, -32)
+
+[node name="Area2D3" parent="." instance=ExtResource("1_4skix")]
+position = Vector2(-368, -32)
+
+[node name="Area2D4" parent="." instance=ExtResource("1_4skix")]
+position = Vector2(-448, -32)
+
+[node name="Area2D5" parent="." instance=ExtResource("1_4skix")]
+position = Vector2(-288, -112)
+
+[node name="Area2D6" parent="." instance=ExtResource("1_4skix")]
+position = Vector2(-368, -112)
+
+[node name="Area2D7" parent="." instance=ExtResource("1_4skix")]
+position = Vector2(-448, -112)
+
+[node name="Area2D8" parent="." instance=ExtResource("1_4skix")]
+position = Vector2(-288, -192)
+
+[node name="Area2D9" parent="." instance=ExtResource("1_4skix")]
+position = Vector2(-368, -192)
+
+[node name="Area2D10" parent="." instance=ExtResource("1_4skix")]
+position = Vector2(-448, -192)
