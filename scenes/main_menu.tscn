@@ -17,8 +17,8 @@ offset_right = 1153.0
 offset_bottom = 648.0
 
 [node name="BG" type="Sprite2D" parent="Control"]
-position = Vector2(576.375, 325.75)
-scale = Vector2(0.600391, 0.603241)
+position = Vector2(576.375, 324)
+scale = Vector2(0.600391, 0.6)
 texture = ExtResource("1_7mxh6")
 
 [node name="Logo" type="Sprite2D" parent="Control"]
@@ -40,9 +40,10 @@ text = "Jogar"
 layout_mode = 0
 offset_left = 64.0
 offset_top = 64.0
-offset_right = 128.0
-offset_bottom = 128.0
+offset_right = 122.0
+offset_bottom = 122.0
 icon = ExtResource("3_8eq0a")
+flat = true
 icon_alignment = 1
 
 [node name="Credits" type="Button" parent="Control"]
@@ -52,6 +53,7 @@ offset_top = 64.0
 offset_right = 1090.0
 offset_bottom = 130.0
 icon = ExtResource("4_w4krw")
+flat = true
 icon_alignment = 1
 
 [connection signal="pressed" from="Control/Play" to="." method="_on_play_pressed"]
