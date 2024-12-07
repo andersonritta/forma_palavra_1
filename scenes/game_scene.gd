@@ -32,6 +32,8 @@ var palavras = [
 	{"imagem": "res://assets/imgs/cards/imagem_vaca.webp", "palavra": "VACA"}
 ]
 
+
+
 # Função para carregar as imagens aleatórias
 func carregar_imagens():
 	palavras.shuffle()  # Embaralha as palavras
@@ -39,7 +41,7 @@ func carregar_imagens():
 	
 	for i in range(4):
 		# Acessa o nó FrameImagem correspondente dinamicamente
-		var imagem_node = $Frames_Vazios/VBoxContainer.get_node("FrameImagem" + str(i + 1))
+		var imagem_node = $FrameImagem.get_node("FrameImagem" + str(i + 1))
 		imagem_node.texture = load(selecionadas[i]["imagem"])  # Atribui a textura da imagem
 	
 	# Exibe as letras correspondentes no GridContainer
@@ -54,10 +56,11 @@ func mostrar_letras(selecionadas):
 		letras.append_array(selecionada["palavra"].split(""))  # Adiciona as letras da palavra na lista
 	
 	# Exibe as letras nos 16 espaços do GridContainer
-	var grid = $Frames_Vazios/GridContainer  # Acessa o GridContainer
+	#var grid = $FramesVazios  # Acessa o GridContainer
 	for i in range(16):
+		var grid = "FrameVazio" + str(i + 1)
 		# Acessa o nó FrameVazio correspondente dinamicamente
-		var frame_vazio = grid.get_node("FrameVazio" + str(i + 1))
+		var frame_vazio = get_node(grid)
 		
 		var label = frame_vazio.get_node("Label")  
 		
@@ -76,19 +79,20 @@ func embaralha(selecionadas):
 		letras.append_array(selecionada["palavra"].split(""))  # Adiciona as letras das palavras
 
 	# Duplica as letras (para criar as palavras do jogo, por exemplo, "BALA" e "BALA")
-	var letras_duplicadas = letras.duplicate()  # Duplicando a lista de letras
+	#var letras_duplicadas = letras.duplicate()  # Duplicando a lista de letras
 
 	# Junta as duas listas de letras
-	letras.append_array(letras_duplicadas)
+	#letras.append_array(letras_duplicadas)
 
 	# Embaralha as letras para garantir aleatoriedade
 	letras.shuffle()
 
 	# Exibe as letras nos 16 espaços do GridContainer
-	var gridLetras = $Frame_Letras
+	#var gridLetras = $FrameLetras
 	for i in range(16):
+		var gridLetras = "FrameLetras" + str(i + 1)
 		# Acessa o nó FrameVazio correspondente dinamicamente
-		var frame_letras = gridLetras.get_node("FrameLetras" + str(i + 1))
+		var frame_letras = get_node(gridLetras)
 		var labelLetras = frame_letras.get_node("Label") 
 		
 		# Atribui a letra embaralhada na célula

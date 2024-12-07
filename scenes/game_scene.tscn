@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7akqcijvkw80"]
+[gd_scene load_steps=11 format=3 uid="uid://b7akqcijvkw80"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_31ni2"]
 [ext_resource type="Texture2D" uid="uid://bki64fd1mu58" path="res://assets/imgs/background_orange.webp" id="1_iayp4"]
@@ -7,8 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cvoo35s7wqo7r" path="res://assets/icons/icon_config.svg" id="3_vbxr4"]
 [ext_resource type="Texture2D" uid="uid://tmycs8yay5iu" path="res://assets/icons/icon_menu.svg" id="4_1vvuf"]
 [ext_resource type="Texture2D" uid="uid://d4xdkcr6i1h6" path="res://assets/imgs/frame_imagem.webp" id="6_336h7"]
-[ext_resource type="Texture2D" uid="uid://c7uyydlakmi53" path="res://assets/imgs/frame_vazio.webp" id="7_yj44g"]
 [ext_resource type="Texture2D" uid="uid://r50irbsavmue" path="res://assets/imgs/frame_letras.webp" id="8_c72xn"]
+[ext_resource type="PackedScene" uid="uid://b4rf6biinbebn" path="res://scenes/grid_slot_vazio.tscn" id="8_qdt85"]
+[ext_resource type="PackedScene" uid="uid://c3bymepays3jq" path="res://scenes/botao_letra.tscn" id="11_kh1kn"]
 
 [node name="Game Scene" type="Node2D"]
 script = ExtResource("1_31ni2")
@@ -73,245 +74,27 @@ position = Vector2(64, 336)
 scale = Vector2(0.553333, 0.553333)
 texture = ExtResource("6_336h7")
 
-[node name="GridContainer" type="GridContainer" parent="Frames_Vazios"]
+[node name="Control" parent="Frames_Vazios" instance=ExtResource("8_qdt85")]
 layout_mode = 2
 
-[node name="FrameVazio1" type="Sprite2D" parent="Frames_Vazios/GridContainer"]
-position = Vector2(172, 48)
-scale = Vector2(0.553333, 0.553333)
-texture = ExtResource("7_yj44g")
-
-[node name="Label" type="Label" parent="Frames_Vazios/GridContainer/FrameVazio1"]
-offset_left = -76.0
-offset_top = -72.0
-offset_right = 69.0
-offset_bottom = 72.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio2" type="Sprite2D" parent="Frames_Vazios/GridContainer"]
-position = Vector2(260, 48)
-scale = Vector2(0.553333, 0.553333)
-texture = ExtResource("7_yj44g")
-
-[node name="Label" type="Label" parent="Frames_Vazios/GridContainer/FrameVazio2"]
-offset_left = -76.0
-offset_top = -72.0
-offset_right = 69.0
-offset_bottom = 72.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio3" type="Sprite2D" parent="Frames_Vazios/GridContainer"]
-position = Vector2(348, 48)
-scale = Vector2(0.553333, 0.553333)
-texture = ExtResource("7_yj44g")
-
-[node name="Label" type="Label" parent="Frames_Vazios/GridContainer/FrameVazio3"]
-offset_left = -76.0
-offset_top = -72.0
-offset_right = 69.0
-offset_bottom = 72.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio4" type="Sprite2D" parent="Frames_Vazios/GridContainer"]
-position = Vector2(436, 48)
-scale = Vector2(0.553333, 0.553333)
-texture = ExtResource("7_yj44g")
-
-[node name="Label" type="Label" parent="Frames_Vazios/GridContainer/FrameVazio4"]
-offset_left = -76.0
-offset_top = -72.0
-offset_right = 69.0
-offset_bottom = 72.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio5" type="Sprite2D" parent="Frames_Vazios/GridContainer"]
-position = Vector2(172, 144)
-scale = Vector2(0.553333, 0.553333)
-texture = ExtResource("7_yj44g")
-
-[node name="Label" type="Label" parent="Frames_Vazios/GridContainer/FrameVazio5"]
-offset_left = -76.0
-offset_top = -72.0
-offset_right = 69.0
-offset_bottom = 72.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio6" type="Sprite2D" parent="Frames_Vazios/GridContainer"]
-position = Vector2(260, 144)
-scale = Vector2(0.553333, 0.553333)
-texture = ExtResource("7_yj44g")
-
-[node name="Label" type="Label" parent="Frames_Vazios/GridContainer/FrameVazio6"]
-offset_left = -76.0
-offset_top = -72.0
-offset_right = 69.0
-offset_bottom = 72.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio7" type="Sprite2D" parent="Frames_Vazios/GridContainer"]
-position = Vector2(348, 144)
-scale = Vector2(0.553333, 0.553333)
-texture = ExtResource("7_yj44g")
-
-[node name="Label" type="Label" parent="Frames_Vazios/GridContainer/FrameVazio7"]
-offset_left = -76.0
-offset_top = -72.0
-offset_right = 69.0
-offset_bottom = 72.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio8" type="Sprite2D" parent="Frames_Vazios/GridContainer"]
-position = Vector2(436, 144)
-scale = Vector2(0.553333, 0.553333)
-texture = ExtResource("7_yj44g")
-
-[node name="Label" type="Label" parent="Frames_Vazios/GridContainer/FrameVazio8"]
-offset_left = -76.0
-offset_top = -72.0
-offset_right = 69.0
-offset_bottom = 72.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio9" type="Sprite2D" parent="Frames_Vazios/GridContainer"]
-position = Vector2(172, 240)
-scale = Vector2(0.553333, 0.553333)
-texture = ExtResource("7_yj44g")
-
-[node name="Label" type="Label" parent="Frames_Vazios/GridContainer/FrameVazio9"]
-offset_left = -76.0
-offset_top = -72.0
-offset_right = 69.0
-offset_bottom = 72.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio10" type="Sprite2D" parent="Frames_Vazios/GridContainer"]
-position = Vector2(260, 240)
-scale = Vector2(0.553333, 0.553333)
-texture = ExtResource("7_yj44g")
-
-[node name="Label" type="Label" parent="Frames_Vazios/GridContainer/FrameVazio10"]
-offset_left = -76.0
-offset_top = -72.0
-offset_right = 69.0
-offset_bottom = 72.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio11" type="Sprite2D" parent="Frames_Vazios/GridContainer"]
-position = Vector2(348, 240)
-scale = Vector2(0.553333, 0.553333)
-texture = ExtResource("7_yj44g")
-
-[node name="Label" type="Label" parent="Frames_Vazios/GridContainer/FrameVazio11"]
-offset_left = -76.0
-offset_top = -72.0
-offset_right = 69.0
-offset_bottom = 72.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio12" type="Sprite2D" parent="Frames_Vazios/GridContainer"]
-position = Vector2(436, 240)
-scale = Vector2(0.553333, 0.553333)
-texture = ExtResource("7_yj44g")
-
-[node name="Label" type="Label" parent="Frames_Vazios/GridContainer/FrameVazio12"]
-offset_left = -76.0
-offset_top = -72.0
-offset_right = 69.0
-offset_bottom = 72.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio13" type="Sprite2D" parent="Frames_Vazios/GridContainer"]
-position = Vector2(172, 336)
-scale = Vector2(0.553333, 0.553333)
-texture = ExtResource("7_yj44g")
-
-[node name="Label" type="Label" parent="Frames_Vazios/GridContainer/FrameVazio13"]
-offset_left = -76.0
-offset_top = -72.0
-offset_right = 69.0
-offset_bottom = 72.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio14" type="Sprite2D" parent="Frames_Vazios/GridContainer"]
-position = Vector2(260, 336)
-scale = Vector2(0.553333, 0.553333)
-texture = ExtResource("7_yj44g")
-
-[node name="Label" type="Label" parent="Frames_Vazios/GridContainer/FrameVazio14"]
-offset_left = -76.0
-offset_top = -72.0
-offset_right = 69.0
-offset_bottom = 72.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio15" type="Sprite2D" parent="Frames_Vazios/GridContainer"]
-position = Vector2(348, 336)
-scale = Vector2(0.553333, 0.553333)
-texture = ExtResource("7_yj44g")
-
-[node name="Label" type="Label" parent="Frames_Vazios/GridContainer/FrameVazio15"]
-offset_left = -76.0
-offset_top = -72.0
-offset_right = 69.0
-offset_bottom = 72.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio16" type="Sprite2D" parent="Frames_Vazios/GridContainer"]
-position = Vector2(436, 336)
-scale = Vector2(0.553333, 0.553333)
-texture = ExtResource("7_yj44g")
-
-[node name="Label" type="Label" parent="Frames_Vazios/GridContainer/FrameVazio16"]
-offset_left = -76.0
-offset_top = -72.0
-offset_right = 69.0
-offset_bottom = 72.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Frame_Letras" type="GridContainer" parent="."]
+[node name="kakakaka" type="GridContainer" parent="."]
 offset_left = 608.0
 offset_top = 200.0
 offset_right = 1072.0
 offset_bottom = 624.0
 
-[node name="FrameLetras1" type="Sprite2D" parent="Frame_Letras"]
-position = Vector2(64, 56)
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FrameLetras1" type="Sprite2D" parent="Control"]
+position = Vector2(672, 256)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("8_c72xn")
 
-[node name="Label" type="Label" parent="Frame_Letras/FrameLetras1"]
+[node name="Label" type="Label" parent="Control/FrameLetras1"]
 offset_left = -74.0
 offset_top = -74.0
 offset_right = 74.0
@@ -319,12 +102,12 @@ offset_bottom = 74.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FrameLetras2" type="Sprite2D" parent="Frame_Letras"]
-position = Vector2(176, 56)
+[node name="FrameLetras2" type="Sprite2D" parent="Control"]
+position = Vector2(784, 256)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("8_c72xn")
 
-[node name="Label" type="Label" parent="Frame_Letras/FrameLetras2"]
+[node name="Label" type="Label" parent="Control/FrameLetras2"]
 offset_left = -74.0
 offset_top = -74.0
 offset_right = 74.0
@@ -332,12 +115,12 @@ offset_bottom = 74.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FrameLetras3" type="Sprite2D" parent="Frame_Letras"]
-position = Vector2(288, 56)
+[node name="FrameLetras3" type="Sprite2D" parent="Control"]
+position = Vector2(896, 256)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("8_c72xn")
 
-[node name="Label" type="Label" parent="Frame_Letras/FrameLetras3"]
+[node name="Label" type="Label" parent="Control/FrameLetras3"]
 offset_left = -74.0
 offset_top = -74.0
 offset_right = 74.0
@@ -345,12 +128,12 @@ offset_bottom = 74.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FrameLetras4" type="Sprite2D" parent="Frame_Letras"]
-position = Vector2(400, 56)
+[node name="FrameLetras4" type="Sprite2D" parent="Control"]
+position = Vector2(1008, 256)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("8_c72xn")
 
-[node name="Label" type="Label" parent="Frame_Letras/FrameLetras4"]
+[node name="Label" type="Label" parent="Control/FrameLetras4"]
 offset_left = -74.0
 offset_top = -74.0
 offset_right = 74.0
@@ -358,12 +141,12 @@ offset_bottom = 74.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FrameLetras5" type="Sprite2D" parent="Frame_Letras"]
-position = Vector2(63.9999, 160)
+[node name="FrameLetras5" type="Sprite2D" parent="Control"]
+position = Vector2(672, 360)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("8_c72xn")
 
-[node name="Label" type="Label" parent="Frame_Letras/FrameLetras5"]
+[node name="Label" type="Label" parent="Control/FrameLetras5"]
 offset_left = -74.0
 offset_top = -74.0
 offset_right = 74.0
@@ -371,12 +154,12 @@ offset_bottom = 74.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FrameLetras6" type="Sprite2D" parent="Frame_Letras"]
-position = Vector2(176, 160)
+[node name="FrameLetras6" type="Sprite2D" parent="Control"]
+position = Vector2(784, 360)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("8_c72xn")
 
-[node name="Label" type="Label" parent="Frame_Letras/FrameLetras6"]
+[node name="Label" type="Label" parent="Control/FrameLetras6"]
 offset_left = -74.0
 offset_top = -74.0
 offset_right = 74.0
@@ -384,12 +167,12 @@ offset_bottom = 74.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FrameLetras7" type="Sprite2D" parent="Frame_Letras"]
-position = Vector2(288, 160)
+[node name="FrameLetras7" type="Sprite2D" parent="Control"]
+position = Vector2(896, 360)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("8_c72xn")
 
-[node name="Label" type="Label" parent="Frame_Letras/FrameLetras7"]
+[node name="Label" type="Label" parent="Control/FrameLetras7"]
 offset_left = -74.0
 offset_top = -74.0
 offset_right = 74.0
@@ -397,12 +180,12 @@ offset_bottom = 74.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FrameLetras8" type="Sprite2D" parent="Frame_Letras"]
-position = Vector2(400, 160)
+[node name="FrameLetras8" type="Sprite2D" parent="Control"]
+position = Vector2(1008, 360)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("8_c72xn")
 
-[node name="Label" type="Label" parent="Frame_Letras/FrameLetras8"]
+[node name="Label" type="Label" parent="Control/FrameLetras8"]
 offset_left = -74.0
 offset_top = -74.0
 offset_right = 74.0
@@ -410,12 +193,12 @@ offset_bottom = 74.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FrameLetras9" type="Sprite2D" parent="Frame_Letras"]
-position = Vector2(64, 264)
+[node name="FrameLetras9" type="Sprite2D" parent="Control"]
+position = Vector2(672, 464)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("8_c72xn")
 
-[node name="Label" type="Label" parent="Frame_Letras/FrameLetras9"]
+[node name="Label" type="Label" parent="Control/FrameLetras9"]
 offset_left = -74.0
 offset_top = -74.0
 offset_right = 74.0
@@ -423,12 +206,12 @@ offset_bottom = 74.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FrameLetras10" type="Sprite2D" parent="Frame_Letras"]
-position = Vector2(176, 264)
+[node name="FrameLetras10" type="Sprite2D" parent="Control"]
+position = Vector2(784, 464)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("8_c72xn")
 
-[node name="Label" type="Label" parent="Frame_Letras/FrameLetras10"]
+[node name="Label" type="Label" parent="Control/FrameLetras10"]
 offset_left = -74.0
 offset_top = -74.0
 offset_right = 74.0
@@ -436,12 +219,12 @@ offset_bottom = 74.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FrameLetras11" type="Sprite2D" parent="Frame_Letras"]
-position = Vector2(288, 264)
+[node name="FrameLetras11" type="Sprite2D" parent="Control"]
+position = Vector2(896, 464)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("8_c72xn")
 
-[node name="Label" type="Label" parent="Frame_Letras/FrameLetras11"]
+[node name="Label" type="Label" parent="Control/FrameLetras11"]
 offset_left = -74.0
 offset_top = -74.0
 offset_right = 74.0
@@ -449,12 +232,12 @@ offset_bottom = 74.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FrameLetras12" type="Sprite2D" parent="Frame_Letras"]
-position = Vector2(400, 264)
+[node name="FrameLetras12" type="Sprite2D" parent="Control"]
+position = Vector2(1008, 464)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("8_c72xn")
 
-[node name="Label" type="Label" parent="Frame_Letras/FrameLetras12"]
+[node name="Label" type="Label" parent="Control/FrameLetras12"]
 offset_left = -74.0
 offset_top = -74.0
 offset_right = 74.0
@@ -462,12 +245,12 @@ offset_bottom = 74.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FrameLetras13" type="Sprite2D" parent="Frame_Letras"]
-position = Vector2(64, 368)
+[node name="FrameLetras13" type="Sprite2D" parent="Control"]
+position = Vector2(672, 568)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("8_c72xn")
 
-[node name="Label" type="Label" parent="Frame_Letras/FrameLetras13"]
+[node name="Label" type="Label" parent="Control/FrameLetras13"]
 offset_left = -74.0
 offset_top = -74.0
 offset_right = 74.0
@@ -475,12 +258,12 @@ offset_bottom = 74.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FrameLetras14" type="Sprite2D" parent="Frame_Letras"]
-position = Vector2(176, 368)
+[node name="FrameLetras14" type="Sprite2D" parent="Control"]
+position = Vector2(784, 568)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("8_c72xn")
 
-[node name="Label" type="Label" parent="Frame_Letras/FrameLetras14"]
+[node name="Label" type="Label" parent="Control/FrameLetras14"]
 offset_left = -74.0
 offset_top = -74.0
 offset_right = 74.0
@@ -488,12 +271,12 @@ offset_bottom = 74.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FrameLetras15" type="Sprite2D" parent="Frame_Letras"]
-position = Vector2(288, 368)
+[node name="FrameLetras15" type="Sprite2D" parent="Control"]
+position = Vector2(896, 568)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("8_c72xn")
 
-[node name="Label" type="Label" parent="Frame_Letras/FrameLetras15"]
+[node name="Label" type="Label" parent="Control/FrameLetras15"]
 offset_left = -74.0
 offset_top = -74.0
 offset_right = 74.0
@@ -501,15 +284,28 @@ offset_bottom = 74.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FrameLetras16" type="Sprite2D" parent="Frame_Letras"]
-position = Vector2(400, 368)
+[node name="kaka" type="Sprite2D" parent="Control"]
+position = Vector2(975, 334)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("8_c72xn")
 
-[node name="Label" type="Label" parent="Frame_Letras/FrameLetras16"]
+[node name="Label" type="Label" parent="Control/kaka"]
 offset_left = -74.0
 offset_top = -74.0
 offset_right = 74.0
 offset_bottom = 74.0
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="FrameLetras16" parent="Control" instance=ExtResource("11_kh1kn")]
+position = Vector2(1008, 568)
+
+[node name="Label" type="Label" parent="Control/FrameLetras16"]
+offset_left = -74.0
+offset_top = -74.0
+offset_right = 74.0
+offset_bottom = 74.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[editable path="Frames_Vazios/Control"]

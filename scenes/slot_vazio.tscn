@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvmlnphdt3dda"]
+
+[ext_resource type="Texture2D" uid="uid://c7uyydlakmi53" path="res://assets/imgs/frame_vazio.webp" id="1_1uxg5"]
+[ext_resource type="Script" path="res://scripts/slot_vazio.gd" id="1_eflme"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ne8p"]
+size = Vector2(64, 64)
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["dropable"]]
+script = ExtResource("1_eflme")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 4.29153e-06)
+scale = Vector2(0.533333, 0.533333)
+texture = ExtResource("1_1uxg5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7ne8p")

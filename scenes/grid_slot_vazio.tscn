@@ -1,0 +1,189 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4rf6biinbebn"]
+
+[ext_resource type="PackedScene" uid="uid://dvmlnphdt3dda" path="res://scenes/slot_vazio.tscn" id="1_10x4h"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -576.0
+offset_bottom = -232.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FrameVazio1" parent="." instance=ExtResource("1_10x4h")]
+position = Vector2(184, 64)
+
+[node name="Label" type="Label" parent="FrameVazio1"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio2" parent="." instance=ExtResource("1_10x4h")]
+position = Vector2(272, 64)
+
+[node name="Label" type="Label" parent="FrameVazio2"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio3" parent="." instance=ExtResource("1_10x4h")]
+position = Vector2(360, 64)
+
+[node name="Label" type="Label" parent="FrameVazio3"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio4" parent="." instance=ExtResource("1_10x4h")]
+position = Vector2(448, 64)
+
+[node name="Label" type="Label" parent="FrameVazio4"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio5" parent="." instance=ExtResource("1_10x4h")]
+position = Vector2(184, 160)
+
+[node name="Label" type="Label" parent="FrameVazio5"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio6" parent="." instance=ExtResource("1_10x4h")]
+position = Vector2(272, 160)
+
+[node name="Label" type="Label" parent="FrameVazio6"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio7" parent="." instance=ExtResource("1_10x4h")]
+position = Vector2(360, 160)
+
+[node name="Label" type="Label" parent="FrameVazio7"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio8" parent="." instance=ExtResource("1_10x4h")]
+position = Vector2(448, 160)
+
+[node name="Label" type="Label" parent="FrameVazio8"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio9" parent="." instance=ExtResource("1_10x4h")]
+position = Vector2(184, 256)
+
+[node name="Label" type="Label" parent="FrameVazio9"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio10" parent="." instance=ExtResource("1_10x4h")]
+position = Vector2(272, 256)
+
+[node name="Label" type="Label" parent="FrameVazio10"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio11" parent="." instance=ExtResource("1_10x4h")]
+position = Vector2(360, 256)
+
+[node name="Label" type="Label" parent="FrameVazio11"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio12" parent="." instance=ExtResource("1_10x4h")]
+position = Vector2(448, 256)
+
+[node name="Label" type="Label" parent="FrameVazio12"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio13" parent="." instance=ExtResource("1_10x4h")]
+position = Vector2(184, 352)
+
+[node name="Label" type="Label" parent="FrameVazio13"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio14" parent="." instance=ExtResource("1_10x4h")]
+position = Vector2(272, 352)
+
+[node name="Label" type="Label" parent="FrameVazio14"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio15" parent="." instance=ExtResource("1_10x4h")]
+position = Vector2(360, 352)
+
+[node name="Label" type="Label" parent="FrameVazio15"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio16" parent="." instance=ExtResource("1_10x4h")]
+position = Vector2(448, 352)
+
+[node name="Label" type="Label" parent="FrameVazio16"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+horizontal_alignment = 1
+vertical_alignment = 1
