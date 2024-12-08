@@ -35,9 +35,9 @@ Desenvolver um jogo que estimule o aprendizado e a interação, ao mesmo tempo q
 - [ ] **Exportar JSON**: Criar uma funcionalidade para exportar os dados coletados em formato JSON.
 - [ ] **Exportar Aplicativo para Mobile**: Adaptar o jogo e exportá-lo como aplicativo para dispositivos Android e iOS.
 - [ ] **Adicionar e Configurar Botões**:
-  - [ ] Botão de **Configurações**.
+  - [x] Botão de **Configurações**.
   - [x] Botão para **Passar de Fase**.
-  - [ ] Botão para **Sair do Jogo**.
+  - [x] Botão para **Sair do Jogo**.
 - [ ] **Efeitos Sonoros**:
   - [ ] Sons ao completar corretamente uma palavra.
   - [ ] Sons ao errar uma palavra.

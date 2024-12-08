@@ -1,9 +1,59 @@
-[gd_scene format=3 uid="uid://uow354j2b4jf"]
+[gd_scene load_steps=4 format=3 uid="uid://uow354j2b4jf"]
 
-[node name="Options Menu" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[ext_resource type="Texture2D" uid="uid://pv5ohbhbeo8o" path="res://assets/imgs/popup_menu_jogo.webp" id="1_emd0n"]
+[ext_resource type="Texture2D" uid="uid://dxwx0g2y6oiua" path="res://assets/icons/icon_close.svg" id="2_qrhuv"]
+[ext_resource type="Texture2D" uid="uid://c8g40lpeffn46" path="res://assets/icons/icon_close_pressionado.webp" id="3_2tfhf"]
+
+[node name="Options Menu" type="Sprite2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(608, 288)
+scale = Vector2(1.21642, 1.21642)
+texture = ExtResource("1_emd0n")
+
+[node name="SliderMusica" type="HSlider" parent="Sprite2D"]
+modulate = Color(0.894118, 0.466667, 0, 1)
+offset_left = -224.0
+offset_top = -20.0
+offset_right = 236.0
+offset_bottom = -4.0
+
+[node name="SliderEfeito" type="HSlider" parent="Sprite2D"]
+modulate = Color(0.894118, 0.466667, 0, 1)
+offset_left = -224.0
+offset_top = 79.0
+offset_right = 230.0
+offset_bottom = 95.0
+
+[node name="LabelMusica" type="Label" parent="Sprite2D"]
+offset_left = -250.0
+offset_top = -66.0
+offset_right = -140.0
+offset_bottom = -20.0
+text = "Musica"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelEfeito" type="Label" parent="Sprite2D"]
+offset_left = -230.184
+offset_top = 39.4601
+offset_right = -102.184
+offset_bottom = 65.4601
+text = "Efeito Sonoros"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelTitulo" type="Label" parent="Sprite2D"]
+offset_left = -46.0368
+offset_top = -118.38
+offset_right = 65.9632
+offset_bottom = -95.3804
+text = "Configurações"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IconClose" type="TouchScreenButton" parent="Sprite2D"]
+position = Vector2(197.301, -118.38)
+scale = Vector2(1.31534, 1.31534)
+texture_normal = ExtResource("2_qrhuv")
+texture_pressed = ExtResource("3_2tfhf")

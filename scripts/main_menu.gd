@@ -19,3 +19,7 @@ func _on_options_pressed():
 func _on_credits_pressed():
 	#get_tree().change_scene_to_file()
 	pass
+
+
+func _on_exit_game_button_pressed() -> void:
+	get_tree().quit()

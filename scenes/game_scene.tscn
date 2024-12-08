@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7akqcijvkw80"]
+[gd_scene load_steps=15 format=3 uid="uid://b7akqcijvkw80"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_31ni2"]
 [ext_resource type="Texture2D" uid="uid://bki64fd1mu58" path="res://assets/imgs/background_orange.webp" id="1_iayp4"]
@@ -6,9 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://bg0lg6qy27uu" path="res://assets/imgs/bot_o_fase.webp" id="3_f8334"]
 [ext_resource type="Texture2D" uid="uid://cvoo35s7wqo7r" path="res://assets/icons/icon_config.svg" id="3_vbxr4"]
 [ext_resource type="Texture2D" uid="uid://tmycs8yay5iu" path="res://assets/icons/icon_menu.svg" id="4_1vvuf"]
+[ext_resource type="FontFile" uid="uid://c0lxteaefq422" path="res://assets/fonts/WorkSans-Bold.ttf" id="5_q74uf"]
 [ext_resource type="Texture2D" uid="uid://d4xdkcr6i1h6" path="res://assets/imgs/frame_imagem.webp" id="6_336h7"]
+[ext_resource type="Texture2D" uid="uid://cv5aqqngs2dco" path="res://assets/icons/icon_config_pressionado.webp" id="6_h5knn"]
 [ext_resource type="Texture2D" uid="uid://c7uyydlakmi53" path="res://assets/imgs/frame_vazio.webp" id="7_yj44g"]
 [ext_resource type="Texture2D" uid="uid://r50irbsavmue" path="res://assets/imgs/frame_letras.webp" id="8_c72xn"]
+[ext_resource type="Texture2D" uid="uid://b0jbwm7io4qwj" path="res://assets/icons/icon_menu_pressionado.webp" id="8_mbslx"]
+[ext_resource type="Texture2D" uid="uid://5c28ktmm6i0m" path="res://assets/imgs/bot_o_menu.webp" id="12_exerk"]
+[ext_resource type="Texture2D" uid="uid://bi118ce1322jf" path="res://assets/imgs/Botão-Menu-Pressionado.webp" id="13_kvg5r"]
 
 [node name="Game Scene" type="Node2D"]
 script = ExtResource("1_31ni2")
@@ -32,25 +37,25 @@ offset_left = -93.0
 offset_top = -27.0
 offset_right = 93.0
 offset_bottom = 23.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("5_q74uf")
+theme_override_font_sizes/font_size = 23
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Credits" type="Button" parent="."]
-offset_left = 1024.0
-offset_top = 64.0
-offset_right = 1090.0
-offset_bottom = 130.0
-icon = ExtResource("3_vbxr4")
-icon_alignment = 1
+[node name="Options" type="TouchScreenButton" parent="."]
+position = Vector2(1064, 88)
+scale = Vector2(0.827587, 0.827586)
+texture_normal = ExtResource("3_vbxr4")
+texture_pressed = ExtResource("6_h5knn")
 
-[node name="Options" type="Button" parent="."]
-offset_left = 64.0
-offset_top = 64.0
-offset_right = 128.0
-offset_bottom = 128.0
-icon = ExtResource("4_1vvuf")
-icon_alignment = 1
+[node name="Menu" type="TouchScreenButton" parent="."]
+position = Vector2(1064, 16)
+scale = Vector2(0.960002, 1.14286)
+texture_normal = ExtResource("4_1vvuf")
+texture_pressed = ExtResource("8_mbslx")
 
 [node name="Frames_Vazios" type="HBoxContainer" parent="."]
 offset_left = 104.0
@@ -523,19 +528,18 @@ offset_bottom = 74.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BotaoProximaFase" type="Button" parent="."]
-offset_left = 312.0
-offset_top = 112.0
-offset_right = 408.0
-offset_bottom = 192.0
-text = "Proxima Fase"
+[node name="BotaoProximaFase" type="TouchScreenButton" parent="."]
+position = Vector2(120, 160)
+texture_normal = ExtResource("12_exerk")
+texture_pressed = ExtResource("13_kvg5r")
 
 [node name="TimerJogo" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
 
 [node name="TimerLabel" type="Label" parent="."]
-offset_right = 256.0
+offset_left = 64.0
+offset_right = 320.0
 offset_bottom = 64.0
 text = "Tempo:"
 

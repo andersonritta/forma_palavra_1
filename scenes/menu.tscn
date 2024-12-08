@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://vchixv8gliab"]
+
+[ext_resource type="Texture2D" uid="uid://csedipa34hts8" path="res://assets/imgs/popup_menu_jogo (1).webp" id="1_wu4qs"]
+[ext_resource type="Texture2D" uid="uid://dxwx0g2y6oiua" path="res://assets/icons/icon_close.svg" id="2_j2ff7"]
+[ext_resource type="Texture2D" uid="uid://c8g40lpeffn46" path="res://assets/icons/icon_close_pressionado.webp" id="3_y7dde"]
+[ext_resource type="Texture2D" uid="uid://5c28ktmm6i0m" path="res://assets/imgs/bot_o_menu.webp" id="4_bo6bd"]
+[ext_resource type="Texture2D" uid="uid://bi118ce1322jf" path="res://assets/imgs/Botão-Menu-Pressionado.webp" id="5_xsh75"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PopupMenu" type="Sprite2D" parent="."]
+position = Vector2(608, 304)
+scale = Vector2(1.32759, 1.32759)
+texture = ExtResource("1_wu4qs")
+
+[node name="Label" type="Label" parent="PopupMenu"]
+offset_left = -42.1818
+offset_top = -156.675
+offset_right = -2.18181
+offset_bottom = -133.675
+text = "Pause Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IconClose" type="TouchScreenButton" parent="PopupMenu"]
+position = Vector2(198.857, -156.675)
+scale = Vector2(1.06089, 1.10509)
+texture_normal = ExtResource("2_j2ff7")
+texture_pressed = ExtResource("3_y7dde")
+
+[node name="BotaoReturn" type="TouchScreenButton" parent="."]
+position = Vector2(360, 208)
+texture_normal = ExtResource("4_bo6bd")
+texture_pressed = ExtResource("5_xsh75")
+
+[node name="Label" type="Label" parent="BotaoReturn"]
+offset_left = 8.0
+offset_right = 472.0
+offset_bottom = 56.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "Retornar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoReset" type="TouchScreenButton" parent="."]
+position = Vector2(360, 320)
+texture_normal = ExtResource("4_bo6bd")
+texture_pressed = ExtResource("5_xsh75")
+
+[node name="Label" type="Label" parent="BotaoReset"]
+offset_left = 8.0
+offset_right = 472.0
+offset_bottom = 56.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "Reiniciar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoMainMenu" type="TouchScreenButton" parent="."]
+position = Vector2(360, 424)
+texture_normal = ExtResource("4_bo6bd")
+texture_pressed = ExtResource("5_xsh75")
+
+[node name="Label" type="Label" parent="BotaoMainMenu"]
+offset_left = 8.0
+offset_right = 472.0
+offset_bottom = 56.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "Menu Principal"
+horizontal_alignment = 1
+vertical_alignment = 1
