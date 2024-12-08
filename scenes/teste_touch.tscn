@@ -1,469 +1,67 @@
-[gd_scene load_steps=6 format=3 uid="uid://dn387xu21gqxe"]
+[gd_scene load_steps=11 format=3 uid="uid://dn387xu21gqxe"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_2bvhg"]
 [ext_resource type="PackedScene" uid="uid://dvmlnphdt3dda" path="res://scenes/slot_vazio.tscn" id="1_pday6"]
 [ext_resource type="PackedScene" uid="uid://c3bymepays3jq" path="res://scenes/botao_letra.tscn" id="2_i64eu"]
+[ext_resource type="Texture2D" uid="uid://bki64fd1mu58" path="res://assets/imgs/background_orange.webp" id="2_v87y8"]
 [ext_resource type="Texture2D" uid="uid://d4xdkcr6i1h6" path="res://assets/imgs/frame_imagem.webp" id="2_yjgn6"]
 [ext_resource type="FontFile" uid="uid://c0lxteaefq422" path="res://assets/fonts/WorkSans-Bold.ttf" id="3_05bat"]
+[ext_resource type="Texture2D" uid="uid://b0007kcxpxclw" path="res://assets/imgs/Logo.svg" id="3_ijwcg"]
+[ext_resource type="Texture2D" uid="uid://bg0lg6qy27uu" path="res://assets/imgs/bot_o_fase.webp" id="4_isaak"]
+[ext_resource type="Texture2D" uid="uid://cvoo35s7wqo7r" path="res://assets/icons/icon_config.svg" id="6_rntb6"]
+[ext_resource type="Texture2D" uid="uid://tmycs8yay5iu" path="res://assets/icons/icon_menu.svg" id="6_weq2q"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_2bvhg")
 
-[node name="FrameVazio1" parent="." instance=ExtResource("1_pday6")]
-position = Vector2(224, 240)
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_v87y8")
 
-[node name="Label" type="Label" parent="FrameVazio1"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(576, 64)
+scale = Vector2(0.130425, 0.130425)
+texture = ExtResource("3_ijwcg")
+
+[node name="Stage" type="Sprite2D" parent="."]
+position = Vector2(576, 128)
+texture = ExtResource("4_isaak")
+
+[node name="Label" type="Label" parent="Stage"]
+offset_left = -88.0
+offset_top = -24.0
+offset_right = 88.0
+offset_bottom = 21.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
 theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
+theme_override_font_sizes/font_size = 25
+text = "Fase 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FrameVazio2" parent="." instance=ExtResource("1_pday6")]
-position = Vector2(312, 240)
+[node name="Menu" type="TouchScreenButton" parent="."]
+position = Vector2(128, 64)
+scale = Vector2(1.28, 1.52381)
+texture_normal = ExtResource("6_weq2q")
 
-[node name="Label" type="Label" parent="FrameVazio2"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio3" parent="." instance=ExtResource("1_pday6")]
-position = Vector2(400, 240)
-
-[node name="Label" type="Label" parent="FrameVazio3"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio4" parent="." instance=ExtResource("1_pday6")]
-position = Vector2(488, 240)
-
-[node name="Label" type="Label" parent="FrameVazio4"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio5" parent="." instance=ExtResource("1_pday6")]
-position = Vector2(224, 336)
-
-[node name="Label" type="Label" parent="FrameVazio5"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio6" parent="." instance=ExtResource("1_pday6")]
-position = Vector2(312, 336)
-
-[node name="Label" type="Label" parent="FrameVazio6"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio7" parent="." instance=ExtResource("1_pday6")]
-position = Vector2(400, 336)
-
-[node name="Label" type="Label" parent="FrameVazio7"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio8" parent="." instance=ExtResource("1_pday6")]
-position = Vector2(488, 336)
-
-[node name="Label" type="Label" parent="FrameVazio8"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio9" parent="." instance=ExtResource("1_pday6")]
-position = Vector2(224, 432)
-
-[node name="Label" type="Label" parent="FrameVazio9"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio10" parent="." instance=ExtResource("1_pday6")]
-position = Vector2(312, 432)
-
-[node name="Label" type="Label" parent="FrameVazio10"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio11" parent="." instance=ExtResource("1_pday6")]
-position = Vector2(400, 432)
-
-[node name="Label" type="Label" parent="FrameVazio11"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio12" parent="." instance=ExtResource("1_pday6")]
-position = Vector2(488, 432)
-
-[node name="Label" type="Label" parent="FrameVazio12"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio13" parent="." instance=ExtResource("1_pday6")]
-position = Vector2(224, 528)
-
-[node name="Label" type="Label" parent="FrameVazio13"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio14" parent="." instance=ExtResource("1_pday6")]
-position = Vector2(312, 528)
-
-[node name="Label" type="Label" parent="FrameVazio14"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio15" parent="." instance=ExtResource("1_pday6")]
-position = Vector2(400, 528)
-
-[node name="Label" type="Label" parent="FrameVazio15"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameVazio16" parent="." instance=ExtResource("1_pday6")]
-position = Vector2(488, 528)
-
-[node name="Label" type="Label" parent="FrameVazio16"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameLetras1" parent="." instance=ExtResource("2_i64eu")]
-position = Vector2(688, 240)
-
-[node name="Label" type="Label" parent="FrameLetras1"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameLetras2" parent="." instance=ExtResource("2_i64eu")]
-position = Vector2(776, 240)
-
-[node name="Label" type="Label" parent="FrameLetras2"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameLetras3" parent="." instance=ExtResource("2_i64eu")]
-position = Vector2(864, 240)
-
-[node name="Label" type="Label" parent="FrameLetras3"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameLetras4" parent="." instance=ExtResource("2_i64eu")]
-position = Vector2(952, 240)
-
-[node name="Label" type="Label" parent="FrameLetras4"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameLetras5" parent="." instance=ExtResource("2_i64eu")]
-position = Vector2(688, 336)
-
-[node name="Label" type="Label" parent="FrameLetras5"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameLetras6" parent="." instance=ExtResource("2_i64eu")]
-position = Vector2(776, 336)
-
-[node name="Label" type="Label" parent="FrameLetras6"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameLetras7" parent="." instance=ExtResource("2_i64eu")]
-position = Vector2(864, 336)
-
-[node name="Label" type="Label" parent="FrameLetras7"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameLetras8" parent="." instance=ExtResource("2_i64eu")]
-position = Vector2(952, 336)
-
-[node name="Label" type="Label" parent="FrameLetras8"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameLetras9" parent="." instance=ExtResource("2_i64eu")]
-position = Vector2(688, 432)
-
-[node name="Label" type="Label" parent="FrameLetras9"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameLetras10" parent="." instance=ExtResource("2_i64eu")]
-position = Vector2(776, 432)
-
-[node name="Label" type="Label" parent="FrameLetras10"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameLetras11" parent="." instance=ExtResource("2_i64eu")]
-position = Vector2(864, 432)
-
-[node name="Label" type="Label" parent="FrameLetras11"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameLetras12" parent="." instance=ExtResource("2_i64eu")]
-position = Vector2(952, 432)
-
-[node name="Label" type="Label" parent="FrameLetras12"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameLetras13" parent="." instance=ExtResource("2_i64eu")]
-position = Vector2(688, 528)
-
-[node name="Label" type="Label" parent="FrameLetras13"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameLetras14" parent="." instance=ExtResource("2_i64eu")]
-position = Vector2(776, 528)
-
-[node name="Label" type="Label" parent="FrameLetras14"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameLetras15" parent="." instance=ExtResource("2_i64eu")]
-position = Vector2(864, 528)
-
-[node name="Label" type="Label" parent="FrameLetras15"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FrameLetras16" parent="." instance=ExtResource("2_i64eu")]
-position = Vector2(952, 528)
-
-[node name="Label" type="Label" parent="FrameLetras16"]
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_05bat")
-theme_override_font_sizes/font_size = 45
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Options" type="TouchScreenButton" parent="."]
+position = Vector2(960, 64)
+scale = Vector2(1.10345, 1.10345)
+texture_normal = ExtResource("6_rntb6")
 
 [node name="FrameImagem" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 80.0
-offset_top = 192.0
-offset_right = 176.0
-offset_bottom = 576.0
+offset_left = 56.0
+offset_top = 200.0
+offset_right = 152.0
+offset_bottom = 584.0
 
 [node name="FrameImagem1" type="Sprite2D" parent="FrameImagem"]
 position = Vector2(48, 48)
@@ -484,3 +82,547 @@ texture = ExtResource("2_yjgn6")
 position = Vector2(48, 336)
 scale = Vector2(0.553333, 0.553333)
 texture = ExtResource("2_yjgn6")
+
+[node name="FrameVazio1" parent="." instance=ExtResource("1_pday6")]
+position = Vector2(200, 248)
+
+[node name="Label" type="Label" parent="FrameVazio1"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio2" parent="." instance=ExtResource("1_pday6")]
+position = Vector2(288, 248)
+
+[node name="Label" type="Label" parent="FrameVazio2"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio3" parent="." instance=ExtResource("1_pday6")]
+position = Vector2(376, 248)
+
+[node name="Label" type="Label" parent="FrameVazio3"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio4" parent="." instance=ExtResource("1_pday6")]
+position = Vector2(464, 248)
+
+[node name="Label" type="Label" parent="FrameVazio4"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio5" parent="." instance=ExtResource("1_pday6")]
+position = Vector2(200, 344)
+
+[node name="Label" type="Label" parent="FrameVazio5"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio6" parent="." instance=ExtResource("1_pday6")]
+position = Vector2(288, 344)
+
+[node name="Label" type="Label" parent="FrameVazio6"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio7" parent="." instance=ExtResource("1_pday6")]
+position = Vector2(376, 344)
+
+[node name="Label" type="Label" parent="FrameVazio7"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio8" parent="." instance=ExtResource("1_pday6")]
+position = Vector2(464, 344)
+
+[node name="Label" type="Label" parent="FrameVazio8"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio9" parent="." instance=ExtResource("1_pday6")]
+position = Vector2(200, 440)
+
+[node name="Label" type="Label" parent="FrameVazio9"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio10" parent="." instance=ExtResource("1_pday6")]
+position = Vector2(288, 440)
+
+[node name="Label" type="Label" parent="FrameVazio10"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio11" parent="." instance=ExtResource("1_pday6")]
+position = Vector2(376, 440)
+
+[node name="Label" type="Label" parent="FrameVazio11"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio12" parent="." instance=ExtResource("1_pday6")]
+position = Vector2(464, 440)
+
+[node name="Label" type="Label" parent="FrameVazio12"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio13" parent="." instance=ExtResource("1_pday6")]
+position = Vector2(200, 536)
+
+[node name="Label" type="Label" parent="FrameVazio13"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio14" parent="." instance=ExtResource("1_pday6")]
+position = Vector2(288, 536)
+
+[node name="Label" type="Label" parent="FrameVazio14"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio15" parent="." instance=ExtResource("1_pday6")]
+position = Vector2(376, 536)
+
+[node name="Label" type="Label" parent="FrameVazio15"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameVazio16" parent="." instance=ExtResource("1_pday6")]
+position = Vector2(464, 536)
+
+[node name="Label" type="Label" parent="FrameVazio16"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameLetras1" parent="." instance=ExtResource("2_i64eu")]
+position = Vector2(752, 248)
+
+[node name="Label" type="Label" parent="FrameLetras1"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.161495, 0.382479, 1.92523e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameLetras2" parent="." instance=ExtResource("2_i64eu")]
+position = Vector2(840, 248)
+
+[node name="Label" type="Label" parent="FrameLetras2"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.161495, 0.382479, 1.92523e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameLetras3" parent="." instance=ExtResource("2_i64eu")]
+position = Vector2(928, 248)
+
+[node name="Label" type="Label" parent="FrameLetras3"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.161495, 0.382479, 1.92523e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameLetras4" parent="." instance=ExtResource("2_i64eu")]
+position = Vector2(1016, 248)
+
+[node name="Label" type="Label" parent="FrameLetras4"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.161495, 0.382479, 1.92523e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameLetras5" parent="." instance=ExtResource("2_i64eu")]
+position = Vector2(752, 344)
+
+[node name="Label" type="Label" parent="FrameLetras5"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.161495, 0.382479, 1.92523e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameLetras6" parent="." instance=ExtResource("2_i64eu")]
+position = Vector2(840, 344)
+
+[node name="Label" type="Label" parent="FrameLetras6"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.161495, 0.382479, 1.92523e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameLetras7" parent="." instance=ExtResource("2_i64eu")]
+position = Vector2(928, 344)
+
+[node name="Label" type="Label" parent="FrameLetras7"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.161495, 0.382479, 1.92523e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameLetras8" parent="." instance=ExtResource("2_i64eu")]
+position = Vector2(1016, 344)
+
+[node name="Label" type="Label" parent="FrameLetras8"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.161495, 0.382479, 1.92523e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameLetras9" parent="." instance=ExtResource("2_i64eu")]
+position = Vector2(752, 440)
+
+[node name="Label" type="Label" parent="FrameLetras9"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.161495, 0.382479, 1.92523e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameLetras10" parent="." instance=ExtResource("2_i64eu")]
+position = Vector2(840, 440)
+
+[node name="Label" type="Label" parent="FrameLetras10"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.161495, 0.382479, 1.92523e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameLetras11" parent="." instance=ExtResource("2_i64eu")]
+position = Vector2(928, 440)
+
+[node name="Label" type="Label" parent="FrameLetras11"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.161495, 0.382479, 1.92523e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameLetras12" parent="." instance=ExtResource("2_i64eu")]
+position = Vector2(1016, 440)
+
+[node name="Label" type="Label" parent="FrameLetras12"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.161495, 0.382479, 1.92523e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameLetras13" parent="." instance=ExtResource("2_i64eu")]
+position = Vector2(752, 536)
+
+[node name="Label" type="Label" parent="FrameLetras13"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.161495, 0.382479, 1.92523e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameLetras14" parent="." instance=ExtResource("2_i64eu")]
+position = Vector2(840, 536)
+
+[node name="Label" type="Label" parent="FrameLetras14"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.161495, 0.382479, 1.92523e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameLetras15" parent="." instance=ExtResource("2_i64eu")]
+position = Vector2(928, 536)
+
+[node name="Label" type="Label" parent="FrameLetras15"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.161495, 0.382479, 1.92523e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrameLetras16" parent="." instance=ExtResource("2_i64eu")]
+position = Vector2(1016, 536)
+
+[node name="Label" type="Label" parent="FrameLetras16"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.161495, 0.382479, 1.92523e-07, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("3_05bat")
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
