@@ -70,7 +70,6 @@ var offset: Vector2
 var initialPos: Vector2
 
 func _input(event):
-	print(global_position)
 	# Detectar início do clique ou toque
 	if (event is InputEventScreenTouch or event is InputEventMouseButton) and event.pressed and draggable:
 		initialPos = global_position
@@ -93,7 +92,7 @@ func _input(event):
 			tween.tween_property(self, "global_position", initialPos, 0.2).set_ease(Tween.EASE_OUT)
 
 
-func _on_area_2d_input_event(viewport, event, shape_idx) -> void:
+func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventScreenTouch and event.pressed:
 		draggable = true
 		scale = Vector2(1.05, 1.05)

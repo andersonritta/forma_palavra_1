@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bu2nfgyrnk767"]
+[gd_scene load_steps=8 format=3 uid="uid://bu2nfgyrnk767"]
 
 [ext_resource type="Texture2D" uid="uid://cg5ajinegabsa" path="res://assets/imgs/background_blue.webp" id="1_7mxh6"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_sdwyg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://tmycs8yay5iu" path="res://assets/icons/icon_menu.svg" id="3_8eq0a"]
 [ext_resource type="Texture2D" uid="uid://cvoo35s7wqo7r" path="res://assets/icons/icon_config.svg" id="4_w4krw"]
 [ext_resource type="Texture2D" uid="uid://dk5suo3c5ynhl" path="res://assets/imgs/Logo-Forma-Palavras.webp" id="5_ljsaq"]
+[ext_resource type="Texture2D" uid="uid://5c28ktmm6i0m" path="res://assets/imgs/bot_o_menu.webp" id="7_ksmui"]
 
 [node name="Main Menu" type="CanvasLayer"]
 script = ExtResource("1_sdwyg")
@@ -55,6 +56,20 @@ offset_bottom = 130.0
 icon = ExtResource("4_w4krw")
 flat = true
 icon_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(352, 344)
+scale = Vector2(1.0566, 1)
+texture_normal = ExtResource("7_ksmui")
+
+[node name="Label" type="Label" parent="TouchScreenButton"]
+offset_right = 477.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("2_kwkep")
+theme_override_font_sizes/font_size = 35
+text = "Jogar"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Control/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Control/Options" to="." method="_on_options_pressed"]

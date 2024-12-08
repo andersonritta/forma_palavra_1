@@ -8,7 +8,7 @@ func _ready():
 	pass
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://scenes/game_scene.tscn")
+	get_tree().change_scene_to_file("res://scenes/teste_touch.tscn")
 	pass
 
 func _on_options_pressed():

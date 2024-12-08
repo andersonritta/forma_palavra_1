@@ -5,7 +5,7 @@ var palavras = [
 	{"imagem": "res://assets/imgs/cards/imagem_boca.webp", "palavra": "BOCA"},
 	{"imagem": "res://assets/imgs/cards/imagem_bola.webp", "palavra": "BOLA"},
 	{"imagem": "res://assets/imgs/cards/imagem_bolo.webp", "palavra": "BOLO"},
-	{"imagem": "res://assets/imgs/cards/imagem_bone.webp", "palavra": "BONE"},
+	{"imagem": "res://assets/imgs/cards/imagem_bone.webp", "palavra": "BONÉ"},
 	{"imagem": "res://assets/imgs/cards/imagem_bota.webp", "palavra": "BOTA"},
 	{"imagem": "res://assets/imgs/cards/imagem_casa.webp", "palavra": "CASA"},
 	{"imagem": "res://assets/imgs/cards/imagem_copo.webp", "palavra": "COPO"},
@@ -34,11 +34,11 @@ var palavras = [
 func carregar_imagens():
 	palavras.shuffle()
 	var selecionadas = palavras.slice(0, 4)
-
+	
 	for i in range(4):
 		var imagem_node = $FrameImagem.get_node("FrameImagem" + str(i + 1))
 		imagem_node.texture = load(selecionadas[i]["imagem"])
-
+	
 	embaralha(selecionadas)
 
 func mostrar_letras(selecionadas):
@@ -74,3 +74,11 @@ func embaralha(selecionadas):
 
 func _ready():
 	carregar_imagens()
+
+
+func _on_options_pressed():
+	pass
+
+
+func _on_menu_pressed() -> void:
+	pass
