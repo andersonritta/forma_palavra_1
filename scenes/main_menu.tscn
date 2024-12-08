@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bu2nfgyrnk767"]
+[gd_scene load_steps=10 format=3 uid="uid://bu2nfgyrnk767"]
 
 [ext_resource type="Texture2D" uid="uid://cg5ajinegabsa" path="res://assets/imgs/background_blue.webp" id="1_7mxh6"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_sdwyg"]
-[ext_resource type="FontFile" uid="uid://c0lxteaefq422" path="res://assets/fonts/WorkSans-Bold.ttf" id="2_kwkep"]
-[ext_resource type="Texture2D" uid="uid://bg0lg6qy27uu" path="res://assets/imgs/bot_o_fase.webp" id="4_ula4u"]
+[ext_resource type="Texture2D" uid="uid://5c28ktmm6i0m" path="res://assets/imgs/bot_o_menu.webp" id="4_7gcqj"]
 [ext_resource type="Texture2D" uid="uid://cvoo35s7wqo7r" path="res://assets/icons/icon_config.svg" id="4_w4krw"]
 [ext_resource type="Texture2D" uid="uid://dk5suo3c5ynhl" path="res://assets/imgs/Logo-Forma-Palavras.webp" id="5_ljsaq"]
 [ext_resource type="Texture2D" uid="uid://bi118ce1322jf" path="res://assets/imgs/Botão-Menu-Pressionado.webp" id="5_nvwvf"]
@@ -30,23 +29,27 @@ position = Vector2(576, 240)
 scale = Vector2(0.635051, 0.635051)
 texture = ExtResource("5_ljsaq")
 
-[node name="Play" type="TouchScreenButton" parent="Control"]
-position = Vector2(288, 424)
-scale = Vector2(2.98039, 2.98039)
-texture_normal = ExtResource("4_ula4u")
+[node name="Play" type="TouchScreenButton" parent="."]
+position = Vector2(336, 456)
+texture_normal = ExtResource("4_7gcqj")
 texture_pressed = ExtResource("5_nvwvf")
 
-[node name="Label" type="Label" parent="Control/Play"]
-offset_right = 196.0
-offset_bottom = 48.0
+[node name="Label" type="Label" parent="Play"]
+offset_left = 8.0
+offset_right = 472.0
+offset_bottom = 50.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("2_kwkep")
-text = "JOGAR AGORA"
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 35
+text = "Jogar"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Options" type="TouchScreenButton" parent="Control"]
+[node name="Options" type="TouchScreenButton" parent="."]
 position = Vector2(1056, 96)
 scale = Vector2(1.10345, 1.10345)
 texture_normal = ExtResource("4_w4krw")
@@ -58,6 +61,6 @@ scale = Vector2(2.4, 2.4)
 texture_normal = ExtResource("9_fffaa")
 texture_pressed = ExtResource("10_aio68")
 
-[connection signal="pressed" from="Control/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Control/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="ExitGameButton" to="." method="_on_exit_game_button_pressed"]

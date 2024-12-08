@@ -1,0 +1,615 @@
+[gd_scene load_steps=15 format=3 uid="uid://bq3xn7ihmg04g"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_oqo65"]
+[ext_resource type="Texture2D" uid="uid://bki64fd1mu58" path="res://assets/imgs/background_orange.webp" id="1_pjmqv"]
+[ext_resource type="Texture2D" uid="uid://b0007kcxpxclw" path="res://assets/imgs/Logo.svg" id="2_cgcce"]
+[ext_resource type="PackedScene" uid="uid://du57wp2j0l7hg" path="res://scenes/letter.tscn" id="3_ef4g6"]
+[ext_resource type="PackedScene" uid="uid://cderap5awcp2m" path="res://scenes/slot.tscn" id="3_mwqsd"]
+[ext_resource type="Texture2D" uid="uid://bg0lg6qy27uu" path="res://assets/imgs/bot_o_fase.webp" id="4_fcxqo"]
+[ext_resource type="Texture2D" uid="uid://d4xdkcr6i1h6" path="res://assets/imgs/frame_imagem.webp" id="4_pna6r"]
+[ext_resource type="FontFile" uid="uid://c0lxteaefq422" path="res://assets/fonts/WorkSans-Bold.ttf" id="5_67ook"]
+[ext_resource type="Texture2D" uid="uid://cvoo35s7wqo7r" path="res://assets/icons/icon_config.svg" id="6_xcryc"]
+[ext_resource type="Texture2D" uid="uid://cv5aqqngs2dco" path="res://assets/icons/icon_config_pressionado.webp" id="7_mio5s"]
+[ext_resource type="Texture2D" uid="uid://tmycs8yay5iu" path="res://assets/icons/icon_menu.svg" id="8_yl61f"]
+[ext_resource type="Texture2D" uid="uid://b0jbwm7io4qwj" path="res://assets/icons/icon_menu_pressionado.webp" id="9_nsm44"]
+[ext_resource type="Texture2D" uid="uid://5c28ktmm6i0m" path="res://assets/imgs/bot_o_menu.webp" id="10_wjlqv"]
+[ext_resource type="Texture2D" uid="uid://bi118ce1322jf" path="res://assets/imgs/Botão-Menu-Pressionado.webp" id="11_c2qrk"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_oqo65")
+
+[node name="Interface" type="CanvasLayer" parent="."]
+
+[node name="BG" type="Sprite2D" parent="Interface"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_pjmqv")
+
+[node name="Logo" type="Sprite2D" parent="Interface"]
+position = Vector2(576, 80)
+scale = Vector2(0.204717, 0.204717)
+texture = ExtResource("2_cgcce")
+
+[node name="BotOFase" type="Sprite2D" parent="Interface"]
+position = Vector2(576, 160)
+texture = ExtResource("4_fcxqo")
+
+[node name="FaseLabel" type="Label" parent="Interface/BotOFase"]
+offset_left = -93.0
+offset_top = -27.0
+offset_right = 93.0
+offset_bottom = 23.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("5_67ook")
+theme_override_font_sizes/font_size = 23
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TimerJogo" type="Timer" parent="Interface"]
+wait_time = 0.1
+autostart = true
+
+[node name="TimerLabel" type="Label" parent="Interface"]
+offset_left = 64.0
+offset_right = 320.0
+offset_bottom = 64.0
+text = "Tempo:"
+
+[node name="Options" type="TouchScreenButton" parent="Interface"]
+position = Vector2(960, 64)
+scale = Vector2(1.10345, 1.10345)
+texture_normal = ExtResource("6_xcryc")
+texture_pressed = ExtResource("7_mio5s")
+
+[node name="Menu" type="TouchScreenButton" parent="Interface"]
+position = Vector2(128, 64)
+scale = Vector2(1.28, 1.52381)
+texture_normal = ExtResource("8_yl61f")
+texture_pressed = ExtResource("9_nsm44")
+
+[node name="BotaoProximaFase" type="TouchScreenButton" parent="Interface"]
+position = Vector2(256, 64)
+scale = Vector2(0.268344, 1.14286)
+texture_normal = ExtResource("10_wjlqv")
+texture_pressed = ExtResource("11_c2qrk")
+
+[node name="Board" type="CanvasLayer" parent="."]
+
+[node name="FrameImagem1" type="Sprite2D" parent="Board"]
+position = Vector2(105.5, 248)
+scale = Vector2(0.533333, 0.533333)
+texture = ExtResource("4_pna6r")
+
+[node name="FrameImagem2" type="Sprite2D" parent="Board"]
+position = Vector2(105.5, 344)
+scale = Vector2(0.553333, 0.553333)
+texture = ExtResource("4_pna6r")
+
+[node name="FrameImagem3" type="Sprite2D" parent="Board"]
+position = Vector2(105.5, 440)
+scale = Vector2(0.553333, 0.553333)
+texture = ExtResource("4_pna6r")
+
+[node name="FrameImagem4" type="Sprite2D" parent="Board"]
+position = Vector2(105.5, 536)
+scale = Vector2(0.553333, 0.553333)
+texture = ExtResource("4_pna6r")
+
+[node name="Slot1" parent="Board" instance=ExtResource("3_mwqsd")]
+position = Vector2(200, 248)
+
+[node name="Label" type="Label" parent="Board/Slot1"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot2" parent="Board" instance=ExtResource("3_mwqsd")]
+position = Vector2(288, 248)
+
+[node name="Label" type="Label" parent="Board/Slot2"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot3" parent="Board" instance=ExtResource("3_mwqsd")]
+position = Vector2(376, 248)
+
+[node name="Label" type="Label" parent="Board/Slot3"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot4" parent="Board" instance=ExtResource("3_mwqsd")]
+position = Vector2(464, 248)
+
+[node name="Label" type="Label" parent="Board/Slot4"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot5" parent="Board" instance=ExtResource("3_mwqsd")]
+position = Vector2(200, 344)
+
+[node name="Label" type="Label" parent="Board/Slot5"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot6" parent="Board" instance=ExtResource("3_mwqsd")]
+position = Vector2(288, 344)
+
+[node name="Label" type="Label" parent="Board/Slot6"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot7" parent="Board" instance=ExtResource("3_mwqsd")]
+position = Vector2(376, 344)
+
+[node name="Label" type="Label" parent="Board/Slot7"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot8" parent="Board" instance=ExtResource("3_mwqsd")]
+position = Vector2(464, 344)
+
+[node name="Label" type="Label" parent="Board/Slot8"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot9" parent="Board" instance=ExtResource("3_mwqsd")]
+position = Vector2(200, 440)
+
+[node name="Label" type="Label" parent="Board/Slot9"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot10" parent="Board" instance=ExtResource("3_mwqsd")]
+position = Vector2(288, 440)
+
+[node name="Label" type="Label" parent="Board/Slot10"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot11" parent="Board" instance=ExtResource("3_mwqsd")]
+position = Vector2(376, 440)
+
+[node name="Label" type="Label" parent="Board/Slot11"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot12" parent="Board" instance=ExtResource("3_mwqsd")]
+position = Vector2(464, 440)
+
+[node name="Label" type="Label" parent="Board/Slot12"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot13" parent="Board" instance=ExtResource("3_mwqsd")]
+position = Vector2(200, 536)
+
+[node name="Label" type="Label" parent="Board/Slot13"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot14" parent="Board" instance=ExtResource("3_mwqsd")]
+position = Vector2(288, 536)
+
+[node name="Label" type="Label" parent="Board/Slot14"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot15" parent="Board" instance=ExtResource("3_mwqsd")]
+position = Vector2(376, 536)
+
+[node name="Label" type="Label" parent="Board/Slot15"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slot16" parent="Board" instance=ExtResource("3_mwqsd")]
+position = Vector2(464, 536)
+
+[node name="Label" type="Label" parent="Board/Slot16"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letter1" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(752, 248)
+
+[node name="Label" type="Label" parent="Board/Letter1"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letter2" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(840, 248)
+
+[node name="Label" type="Label" parent="Board/Letter2"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letter3" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(928, 248)
+
+[node name="Label" type="Label" parent="Board/Letter3"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letter4" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(1016, 248)
+
+[node name="Label" type="Label" parent="Board/Letter4"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letter5" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(752, 344)
+
+[node name="Label" type="Label" parent="Board/Letter5"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letter6" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(840, 344)
+
+[node name="Label" type="Label" parent="Board/Letter6"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letter7" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(928, 344)
+
+[node name="Label" type="Label" parent="Board/Letter7"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letter8" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(1016, 344)
+
+[node name="Label" type="Label" parent="Board/Letter8"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letter9" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(752, 440)
+
+[node name="Label" type="Label" parent="Board/Letter9"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letter10" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(840, 440)
+
+[node name="Label" type="Label" parent="Board/Letter10"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letter11" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(928, 440)
+
+[node name="Label" type="Label" parent="Board/Letter11"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letter12" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(1016, 440)
+
+[node name="Label" type="Label" parent="Board/Letter12"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letter13" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(752, 536)
+
+[node name="Label" type="Label" parent="Board/Letter13"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letter14" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(840, 536)
+
+[node name="Label" type="Label" parent="Board/Letter14"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letter15" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(928, 536)
+
+[node name="Label" type="Label" parent="Board/Letter15"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Letter16" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(1016, 536)
+
+[node name="Label" type="Label" parent="Board/Letter16"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Interface/TimerJogo" to="." method="_on_timer_jogo_timeout"]
+[connection signal="pressed" from="Interface/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Interface/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Interface/BotaoProximaFase" to="." method="_on_botao_proxima_fase_pressed"]

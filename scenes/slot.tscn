@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cderap5awcp2m"]
+
+[ext_resource type="Texture2D" uid="uid://c7uyydlakmi53" path="res://assets/imgs/frame_vazio.webp" id="1_h8hsc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cofdf"]
+size = Vector2(64, 64)
+
+[node name="Slot" type="StaticBody2D" groups=["dropable"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.90735e-06, 0)
+scale = Vector2(0.533333, 0.533333)
+texture = ExtResource("1_h8hsc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cofdf")

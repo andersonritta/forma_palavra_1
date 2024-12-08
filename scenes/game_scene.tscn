@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://b7akqcijvkw80"]
 
-[ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_31ni2"]
+[ext_resource type="Script" path="res://scripts/game_scene.gd" id="1_gojmd"]
 [ext_resource type="Texture2D" uid="uid://bki64fd1mu58" path="res://assets/imgs/background_orange.webp" id="1_iayp4"]
 [ext_resource type="Texture2D" uid="uid://b0007kcxpxclw" path="res://assets/imgs/Logo.svg" id="2_jrhm7"]
 [ext_resource type="Texture2D" uid="uid://bg0lg6qy27uu" path="res://assets/imgs/bot_o_fase.webp" id="3_f8334"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bi118ce1322jf" path="res://assets/imgs/Botão-Menu-Pressionado.webp" id="13_kvg5r"]
 
 [node name="Game Scene" type="Node2D"]
-script = ExtResource("1_31ni2")
+script = ExtResource("1_gojmd")
 
 [node name="BackgroundOrange" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
