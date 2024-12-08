@@ -20,8 +20,8 @@ Desenvolver um jogo que estimule o aprendizado e a interação, ao mesmo tempo q
 - [x] **Mecânica Básica**: Verificação das palavras formadas para identificar correspondência com as imagens apresentadas.
 
 ### Funcionalidades a Serem Desenvolvidas
-- [ ] **Randomização de Fases**: Garantir que as imagens e palavras não se repitam durante o jogo.
-- [ ] **Timer Oculto**: Adicionar um limite de tempo para cada fase sem exibi-lo ao jogador.
+- [x] **Randomização de Fases**: Garantir que as imagens e palavras não se repitam durante o jogo.
+- [x] **Timer Oculto**: Adicionar um timer sem exibi-lo ao jogador.
 - [ ] **Responsividade**: Ajustar a interface para diferentes dispositivos.
 - [ ] **Sistema de Dicas**: Apresentar dicas após um determinado tempo sem interação.
 - [ ] **Coleta de Dados**:
@@ -36,7 +36,7 @@ Desenvolver um jogo que estimule o aprendizado e a interação, ao mesmo tempo q
 - [ ] **Exportar Aplicativo para Mobile**: Adaptar o jogo e exportá-lo como aplicativo para dispositivos Android e iOS.
 - [ ] **Adicionar e Configurar Botões**:
   - [ ] Botão de **Configurações**.
-  - [ ] Botão para **Passar de Fase**.
+  - [x] Botão para **Passar de Fase**.
   - [ ] Botão para **Sair do Jogo**.
 - [ ] **Efeitos Sonoros**:
   - [ ] Sons ao completar corretamente uma palavra.

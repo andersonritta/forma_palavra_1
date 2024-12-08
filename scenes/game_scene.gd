@@ -1,5 +1,9 @@
 extends Node2D
 
+var tempo_decorrido = 0.0  # Tempo acumulado em segundos
+var numero_da_fase = 1  # Começa na fase 1
+
+
 # Lista de palavras e imagens
 var palavras = [
 	{"imagem": "res://assets/imgs/cards/imagem_bala.webp", "palavra": "BALA"},
@@ -32,10 +36,28 @@ var palavras = [
 	{"imagem": "res://assets/imgs/cards/imagem_vaca.webp", "palavra": "VACA"}
 ]
 
+var palavras_usadas = []
+
 # Função para carregar as imagens aleatórias
 func carregar_imagens():
 	palavras.shuffle()  # Embaralha as palavras
-	var selecionadas = palavras.slice(0, 4)  # Pega as 4 primeiras palavras
+	
+	# Filtra as palavras que ainda não foram usadas
+	var palavras_disponiveis = []
+	for palavra in palavras:
+		if not palavras_usadas.has(palavra):
+			palavras_disponiveis.append(palavra)
+			
+	if palavras_disponiveis.size() < 4:
+		print("Não há palavras suficientes para gerar uma nova fase!")
+		return
+	
+	palavras_disponiveis.shuffle()  # Embaralha as palavras disponíveis
+	
+	var selecionadas = palavras_disponiveis.slice(0, 4)  # Pega as 4 primeiras palavras disponíveis
+	
+	# Adiciona as palavras selecionadas à lista de palavras usadas
+	palavras_usadas.append_array(selecionadas)
 	
 	for i in range(4):
 		# Acessa o nó FrameImagem correspondente dinamicamente
@@ -43,7 +65,8 @@ func carregar_imagens():
 		imagem_node.texture = load(selecionadas[i]["imagem"])  # Atribui a textura da imagem
 	
 	# Exibe as letras correspondentes no GridContainer
-	#mostrar_letras(selecionadas)
+		#mostrar_letras(selecionadas)
+	
 	embaralha(selecionadas)
 
 # Função para exibir as letras no GridContainer
@@ -75,12 +98,6 @@ func embaralha(selecionadas):
 	for selecionada in selecionadas:
 		letras.append_array(selecionada["palavra"].split(""))  # Adiciona as letras das palavras
 
-	# Duplica as letras (para criar as palavras do jogo, por exemplo, "BALA" e "BALA")
-	var letras_duplicadas = letras.duplicate()  # Duplicando a lista de letras
-
-	# Junta as duas listas de letras
-	letras.append_array(letras_duplicadas)
-
 	# Embaralha as letras para garantir aleatoriedade
 	letras.shuffle()
 
@@ -97,4 +114,18 @@ func embaralha(selecionadas):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$BackgroundOrange/BotOFase/FaseLabel.text = "Fase " + str(numero_da_fase)  # Exibe "Fase 1"
 	carregar_imagens() # Replace with function body.
+	
+	$TimerLabel.visible = false
+
+
+func _on_botao_proxima_fase_pressed() -> void:
+	numero_da_fase += 1  # Incrementa o número da fase
+	$BackgroundOrange/BotOFase/FaseLabel.text = "Fase " + str(numero_da_fase)  # Atualiza o texto da fase
+	carregar_imagens()
+
+
+func _on_timer_jogo_timeout() -> void:
+	tempo_decorrido += 0.1  # Incrementa o tempo (de acordo com Wait Time do Timer)
+	$TimerLabel.text = "Tempo: %.1f segundos" % tempo_decorrido
