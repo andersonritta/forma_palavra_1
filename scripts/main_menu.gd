@@ -5,6 +5,8 @@ extends CanvasLayer
 #@onready var credits_button = $Control/Credits
 
 func _ready():
+	if not GlobalAudioStreamPlayer.is_playing():
+		GlobalAudioStreamPlayer.playMusicLevel()
 	pass
 
 func _on_play_pressed():

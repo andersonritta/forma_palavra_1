@@ -28,7 +28,7 @@ func _input(event):
 			tween.tween_property(self, "global_position", initialPos, 0.2).set_ease(Tween.EASE_OUT)
 
 
-func _on_area_2d_input_event(viewport, event, shape_idx):
+func _on_area_2d_input_event(_viewport, event, _shape_idx):
 	if event is InputEventScreenTouch and event.pressed:
 		draggable = true
 		scale = Vector2(1.05, 1.05)

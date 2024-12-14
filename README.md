@@ -33,7 +33,7 @@ Desenvolver um jogo que estimule o aprendizado e a interação, ao mesmo tempo q
   - [ ] Verificação de correspondência e posição correta das letras.
   - [ ] Letras selecionadas pelo jogador.
 - [ ] **Exportar JSON**: Criar uma funcionalidade para exportar os dados coletados em formato JSON.
-- [ ] **Exportar Aplicativo para Mobile**: Adaptar o jogo e exportá-lo como aplicativo para dispositivos Android e iOS.
+- [ ] **Exportar Aplicativo para Mobile**: Adaptar o jogo e exportá-lo como aplicativo para dispositivos Android.
 - [ ] **Adicionar e Configurar Botões**:
   - [x] Botão de **Configurações**.
   - [x] Botão para **Passar de Fase**.
@@ -41,8 +41,8 @@ Desenvolver um jogo que estimule o aprendizado e a interação, ao mesmo tempo q
 - [ ] **Efeitos Sonoros**:
   - [ ] Sons ao completar corretamente uma palavra.
   - [ ] Sons ao errar uma palavra.
-- [ ] **Música de Fundo**: Adicionar uma música relaxante ao jogo.
-- [ ] **Ajuste de Volume**: Permitir que o jogador ajuste o volume da música e dos sons do jogo.
+- [x] **Música de Fundo**: Adicionar uma música relaxante ao jogo.
+- [X] **Ajuste de Volume**: Permitir que o jogador ajuste o volume da música e dos sons do jogo.
 - [ ] **Ativar/Desativar Dicas**: Configuração para habilitar ou desabilitar o sistema de dicas.
 
 
