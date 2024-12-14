@@ -77,18 +77,37 @@ func mostrar_letras(selecionadas):
 
 
 func embaralha(selecionadas):
-	var letras = []
-
+	# Coleta todas as letras das palavras selecionadas
+	var letras_palavras = []
 	for selecionada in selecionadas:
-		letras.append_array(selecionada["palavra"].split(""))
+		letras_palavras.append_array(selecionada["palavra"].split(""))
 
-	letras.shuffle()
+	# Preenche as 16 primeiras posições com as letras das palavras
 	var gridLetras = $Board
+
+	# Cria uma lista com as 12 letras aleatórias (do alfabeto ou letras extras)
+	var letras_aleatorias = []
+	var alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	for i in range(12):
+		letras_aleatorias.append(alfabeto[randi() % alfabeto.length()])
+
+	# Embaralha as letras aleatórias
+	letras_aleatorias.shuffle()
+
+	# Agora, preenche as posições de letras
+	var todas_as_letras = letras_palavras + letras_aleatorias
+	todas_as_letras.shuffle()  # Embaralha as letras combinadas
 
 	for i in range(16):
 		var frame_letras = gridLetras.get_node("Letter" + str(i + 1))
 		var labelLetras = frame_letras.get_node("Label") 
-		labelLetras.text = letras[i]
+		labelLetras.text = todas_as_letras[i]
+
+	# Agora, preenche as 12 novas letras nas posições restantes
+	for i in range(16, 28):
+		var frame_letras = gridLetras.get_node("Letter" + str(i + 1))
+		var labelLetras = frame_letras.get_node("Label") 
+		labelLetras.text = todas_as_letras[i]
 
 
 func _ready():

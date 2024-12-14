@@ -5,6 +5,9 @@ var dropable_areas = []
 var offset: Vector2
 var initialPos: Vector2
 
+func _ready() -> void:
+	initialPos = position
+
 func _input(event):
 	# Detectar início do clique ou toque
 	if (event is InputEventScreenTouch or event is InputEventMouseButton) and event.pressed and draggable:

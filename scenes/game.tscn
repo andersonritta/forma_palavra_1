@@ -78,27 +78,27 @@ texture_pressed = ExtResource("11_c2qrk")
 [node name="Board" type="CanvasLayer" parent="."]
 
 [node name="FrameImagem1" type="Sprite2D" parent="Board"]
-position = Vector2(105.5, 248)
+position = Vector2(72, 248)
 scale = Vector2(0.533333, 0.533333)
 texture = ExtResource("4_pna6r")
 
 [node name="FrameImagem2" type="Sprite2D" parent="Board"]
-position = Vector2(105.5, 344)
+position = Vector2(72, 344)
 scale = Vector2(0.553333, 0.553333)
 texture = ExtResource("4_pna6r")
 
 [node name="FrameImagem3" type="Sprite2D" parent="Board"]
-position = Vector2(105.5, 440)
+position = Vector2(72, 440)
 scale = Vector2(0.553333, 0.553333)
 texture = ExtResource("4_pna6r")
 
 [node name="FrameImagem4" type="Sprite2D" parent="Board"]
-position = Vector2(105.5, 536)
+position = Vector2(72, 536)
 scale = Vector2(0.553333, 0.553333)
 texture = ExtResource("4_pna6r")
 
 [node name="Slot1" parent="Board" instance=ExtResource("3_mwqsd")]
-position = Vector2(200, 248)
+position = Vector2(176, 248)
 
 [node name="Label" type="Label" parent="Board/Slot1"]
 offset_left = -32.0
@@ -109,9 +109,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot2" parent="Board" instance=ExtResource("3_mwqsd")]
-position = Vector2(288, 248)
+position = Vector2(264, 248)
 
 [node name="Label" type="Label" parent="Board/Slot2"]
 offset_left = -32.0
@@ -122,9 +123,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot3" parent="Board" instance=ExtResource("3_mwqsd")]
-position = Vector2(376, 248)
+position = Vector2(352, 248)
 
 [node name="Label" type="Label" parent="Board/Slot3"]
 offset_left = -32.0
@@ -135,9 +137,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot4" parent="Board" instance=ExtResource("3_mwqsd")]
-position = Vector2(464, 248)
+position = Vector2(440, 248)
 
 [node name="Label" type="Label" parent="Board/Slot4"]
 offset_left = -32.0
@@ -148,9 +151,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot5" parent="Board" instance=ExtResource("3_mwqsd")]
-position = Vector2(200, 344)
+position = Vector2(176, 344)
 
 [node name="Label" type="Label" parent="Board/Slot5"]
 offset_left = -32.0
@@ -161,9 +165,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot6" parent="Board" instance=ExtResource("3_mwqsd")]
-position = Vector2(288, 344)
+position = Vector2(264, 344)
 
 [node name="Label" type="Label" parent="Board/Slot6"]
 offset_left = -32.0
@@ -174,9 +179,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot7" parent="Board" instance=ExtResource("3_mwqsd")]
-position = Vector2(376, 344)
+position = Vector2(352, 344)
 
 [node name="Label" type="Label" parent="Board/Slot7"]
 offset_left = -32.0
@@ -187,9 +193,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot8" parent="Board" instance=ExtResource("3_mwqsd")]
-position = Vector2(464, 344)
+position = Vector2(440, 344)
 
 [node name="Label" type="Label" parent="Board/Slot8"]
 offset_left = -32.0
@@ -200,9 +207,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot9" parent="Board" instance=ExtResource("3_mwqsd")]
-position = Vector2(200, 440)
+position = Vector2(176, 440)
 
 [node name="Label" type="Label" parent="Board/Slot9"]
 offset_left = -32.0
@@ -213,9 +221,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot10" parent="Board" instance=ExtResource("3_mwqsd")]
-position = Vector2(288, 440)
+position = Vector2(264, 440)
 
 [node name="Label" type="Label" parent="Board/Slot10"]
 offset_left = -32.0
@@ -226,9 +235,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot11" parent="Board" instance=ExtResource("3_mwqsd")]
-position = Vector2(376, 440)
+position = Vector2(352, 440)
 
 [node name="Label" type="Label" parent="Board/Slot11"]
 offset_left = -32.0
@@ -239,9 +249,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot12" parent="Board" instance=ExtResource("3_mwqsd")]
-position = Vector2(464, 440)
+position = Vector2(440, 440)
 
 [node name="Label" type="Label" parent="Board/Slot12"]
 offset_left = -32.0
@@ -252,9 +263,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot13" parent="Board" instance=ExtResource("3_mwqsd")]
-position = Vector2(200, 536)
+position = Vector2(176, 536)
 
 [node name="Label" type="Label" parent="Board/Slot13"]
 offset_left = -32.0
@@ -265,9 +277,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot14" parent="Board" instance=ExtResource("3_mwqsd")]
-position = Vector2(288, 536)
+position = Vector2(264, 536)
 
 [node name="Label" type="Label" parent="Board/Slot14"]
 offset_left = -32.0
@@ -278,9 +291,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot15" parent="Board" instance=ExtResource("3_mwqsd")]
-position = Vector2(376, 536)
+position = Vector2(352, 536)
 
 [node name="Label" type="Label" parent="Board/Slot15"]
 offset_left = -32.0
@@ -291,9 +305,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Slot16" parent="Board" instance=ExtResource("3_mwqsd")]
-position = Vector2(464, 536)
+position = Vector2(440, 536)
 
 [node name="Label" type="Label" parent="Board/Slot16"]
 offset_left = -32.0
@@ -304,9 +319,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Letter1" parent="Board" instance=ExtResource("3_ef4g6")]
-position = Vector2(752, 248)
+position = Vector2(552, 248)
 
 [node name="Label" type="Label" parent="Board/Letter1"]
 offset_left = -32.0
@@ -323,9 +339,10 @@ theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Letter2" parent="Board" instance=ExtResource("3_ef4g6")]
-position = Vector2(840, 248)
+position = Vector2(640, 248)
 
 [node name="Label" type="Label" parent="Board/Letter2"]
 offset_left = -32.0
@@ -342,9 +359,10 @@ theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Letter3" parent="Board" instance=ExtResource("3_ef4g6")]
-position = Vector2(928, 248)
+position = Vector2(728, 248)
 
 [node name="Label" type="Label" parent="Board/Letter3"]
 offset_left = -32.0
@@ -361,9 +379,10 @@ theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Letter4" parent="Board" instance=ExtResource("3_ef4g6")]
-position = Vector2(1016, 248)
+position = Vector2(816, 248)
 
 [node name="Label" type="Label" parent="Board/Letter4"]
 offset_left = -32.0
@@ -380,9 +399,10 @@ theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Letter5" parent="Board" instance=ExtResource("3_ef4g6")]
-position = Vector2(752, 344)
+position = Vector2(904, 248)
 
 [node name="Label" type="Label" parent="Board/Letter5"]
 offset_left = -32.0
@@ -399,9 +419,10 @@ theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Letter6" parent="Board" instance=ExtResource("3_ef4g6")]
-position = Vector2(840, 344)
+position = Vector2(992, 248)
 
 [node name="Label" type="Label" parent="Board/Letter6"]
 offset_left = -32.0
@@ -418,9 +439,10 @@ theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Letter7" parent="Board" instance=ExtResource("3_ef4g6")]
-position = Vector2(928, 344)
+position = Vector2(1080, 248)
 
 [node name="Label" type="Label" parent="Board/Letter7"]
 offset_left = -32.0
@@ -437,9 +459,10 @@ theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Letter8" parent="Board" instance=ExtResource("3_ef4g6")]
-position = Vector2(1016, 344)
+position = Vector2(552, 344)
 
 [node name="Label" type="Label" parent="Board/Letter8"]
 offset_left = -32.0
@@ -456,9 +479,10 @@ theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Letter9" parent="Board" instance=ExtResource("3_ef4g6")]
-position = Vector2(752, 440)
+position = Vector2(640, 344)
 
 [node name="Label" type="Label" parent="Board/Letter9"]
 offset_left = -32.0
@@ -475,9 +499,10 @@ theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Letter10" parent="Board" instance=ExtResource("3_ef4g6")]
-position = Vector2(840, 440)
+position = Vector2(728, 344)
 
 [node name="Label" type="Label" parent="Board/Letter10"]
 offset_left = -32.0
@@ -494,9 +519,10 @@ theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Letter11" parent="Board" instance=ExtResource("3_ef4g6")]
-position = Vector2(928, 440)
+position = Vector2(816, 344)
 
 [node name="Label" type="Label" parent="Board/Letter11"]
 offset_left = -32.0
@@ -513,9 +539,10 @@ theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Letter12" parent="Board" instance=ExtResource("3_ef4g6")]
-position = Vector2(1016, 440)
+position = Vector2(904, 344)
 
 [node name="Label" type="Label" parent="Board/Letter12"]
 offset_left = -32.0
@@ -532,9 +559,10 @@ theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Letter13" parent="Board" instance=ExtResource("3_ef4g6")]
-position = Vector2(752, 536)
+position = Vector2(992, 344)
 
 [node name="Label" type="Label" parent="Board/Letter13"]
 offset_left = -32.0
@@ -551,9 +579,10 @@ theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Letter14" parent="Board" instance=ExtResource("3_ef4g6")]
-position = Vector2(840, 536)
+position = Vector2(1080, 344)
 
 [node name="Label" type="Label" parent="Board/Letter14"]
 offset_left = -32.0
@@ -570,9 +599,10 @@ theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Letter15" parent="Board" instance=ExtResource("3_ef4g6")]
-position = Vector2(928, 536)
+position = Vector2(552, 440)
 
 [node name="Label" type="Label" parent="Board/Letter15"]
 offset_left = -32.0
@@ -589,11 +619,252 @@ theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Letter16" parent="Board" instance=ExtResource("3_ef4g6")]
-position = Vector2(1016, 536)
+position = Vector2(640, 440)
 
 [node name="Label" type="Label" parent="Board/Letter16"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Letter17" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(728, 440)
+
+[node name="Label" type="Label" parent="Board/Letter17"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Letter18" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(816, 440)
+
+[node name="Label" type="Label" parent="Board/Letter18"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Letter19" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(904, 440)
+
+[node name="Label" type="Label" parent="Board/Letter19"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Letter20" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(992, 440)
+
+[node name="Label" type="Label" parent="Board/Letter20"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Letter21" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(1080, 440)
+
+[node name="Label" type="Label" parent="Board/Letter21"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Letter22" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(552, 536)
+
+[node name="Label" type="Label" parent="Board/Letter22"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Letter23" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(640, 536)
+
+[node name="Label" type="Label" parent="Board/Letter23"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Letter24" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(728, 536)
+
+[node name="Label" type="Label" parent="Board/Letter24"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Letter25" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(816, 536)
+
+[node name="Label" type="Label" parent="Board/Letter25"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Letter26" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(904, 536)
+
+[node name="Label" type="Label" parent="Board/Letter26"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Letter27" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(992, 536)
+
+[node name="Label" type="Label" parent="Board/Letter27"]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.160784, 0.384314, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 45
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Letter28" parent="Board" instance=ExtResource("3_ef4g6")]
+position = Vector2(1080, 536)
+
+[node name="Label" type="Label" parent="Board/Letter28"]
 offset_left = -32.0
 offset_top = -32.0
 offset_right = 32.0
