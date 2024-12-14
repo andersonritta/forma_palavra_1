@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var play_button = $Play
 @onready var options_button = $Options
-#@onready var credits_button = $Control/Credits
+@onready var credits_button = $Creditos
 
 func _ready():
 	if not GlobalAudioStreamPlayer.is_playing():
@@ -18,6 +18,9 @@ func _on_options_pressed():
 	OptionsMenu.show_pause_menu()
 	pass
 
+func _on_creditos_pressed() -> void:
+	CreditosMenu.show_pause_menu()
+	pass # Replace with function body.
 
 func _on_exit_game_button_pressed():
 	get_tree().quit()
