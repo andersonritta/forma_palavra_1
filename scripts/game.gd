@@ -34,6 +34,8 @@ var palavras = [
 	{"imagem": "res://assets/imgs/cards/imagem_vaca.webp", "palavra": "VACA"}
 ]
 
+var slots = []
+
 func carregar_imagens():
 	palavras.shuffle()
 	var palavras_disponiveis = []
@@ -55,6 +57,7 @@ func carregar_imagens():
 		imagem_node.texture = load(selecionadas[i]["imagem"])
 
 	embaralha(selecionadas)
+	mostrar_letras(selecionadas)
 
 
 func mostrar_letras(selecionadas):
