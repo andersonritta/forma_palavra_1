@@ -4,12 +4,12 @@ var draggable = false
 var dropable_areas = []
 var offset: Vector2
 var initialPos: Vector2
-var letra: String  # Variável para armazenar a letra associada
+var letra: String  # Armazena a letra associada
 
 func _ready() -> void:
 	initialPos = position  # Salva a posição inicial da letra
 
-# Defina a letra associada à instância da letra (pode ser chamada no momento em que a letra é criada)
+# Defina a letra associada à instância da letra
 func set_letra(nova_letra: String) -> void:
 	letra = nova_letra
 
@@ -31,8 +31,8 @@ func _input(event):
 			var closest_area = get_closest_dropable()
 
 			if closest_area:
-				# Aqui, usamos a variável 'letra' que contém a letra associada a esta instância
-				closest_area.receber_letra(letra)  # Envia a letra para o Slot
+				# Passa a letra para o slot
+				closest_area.receber_letra(self)  # Passa a referência da letra
 				tween.tween_property(self, "position", closest_area.position, 0.2).set_ease(Tween.EASE_OUT)
 		else:
 			tween.tween_property(self, "global_position", initialPos, 0.2).set_ease(Tween.EASE_OUT)
@@ -49,13 +49,14 @@ func _on_area_2d_input_event(_viewport, event, _shape_idx):
 		draggable = false
 		scale = Vector2(1, 1)
 
-# Detectar áreas "dropáveis"
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group('dropable'):
+	# Quando a letra entra em uma área de "drop" (um Slot)
+	if body.is_in_group('dropable') and not body.is_in_group('draggable'):
 		dropable_areas.append(body)
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body.is_in_group('dropable'):
+	# Quando a letra sai de uma área de "drop"
+	if body.is_in_group('dropable') and not body.is_in_group('draggable'):
 		dropable_areas.erase(body)
 
 func get_closest_dropable() -> Node2D:
@@ -64,6 +65,7 @@ func get_closest_dropable() -> Node2D:
 	
 	for area in dropable_areas:
 		var distance = global_position.distance_to(area.global_position)
+
 		if distance < closest_distance:
 			closest_distance = distance
 			closest_area = area

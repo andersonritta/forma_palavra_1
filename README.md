@@ -30,7 +30,7 @@ Desenvolver um jogo que estimule o aprendizado e a interação, ao mesmo tempo q
   - [ ] Número de erros cometidos.
   - [ ] Ordem em que as palavras foram formadas.
   - [ ] Quantidade de acertos.
-  - [ ] Verificação de correspondência e posição correta das letras.
+  - [x] Verificação de correspondência e posição correta das letras.
   - [ ] Letras selecionadas pelo jogador.
 - [ ] **Exportar JSON**: Criar uma funcionalidade para exportar os dados coletados em formato JSON.
 - [ ] **Exportar Aplicativo para Mobile**: Adaptar o jogo e exportá-lo como aplicativo para dispositivos Android.

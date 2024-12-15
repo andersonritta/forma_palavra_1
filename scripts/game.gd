@@ -52,32 +52,57 @@ func carregar_imagens():
 	var selecionadas = palavras_disponiveis.slice(0, 4)
 	palavras_usadas.append_array(selecionadas)
 
+	# Associando as letras corretas aos slots
 	for i in range(4):
 		var imagem_node = $Board.get_node("FrameImagem" + str(i + 1))
 		imagem_node.texture = load(selecionadas[i]["imagem"])
 
-	embaralha(selecionadas)
-	mostrar_letras(selecionadas)
+		# Configurando as letras corretas para os slots
+		var slot = $Board.get_node("Slot" + str(i + 1))  # Slot correspondente
+		slot.letra_correta = selecionadas[i]["palavra"]  # Configura a palavra correta no slot
 
+		# Atualizando a label do slot com a palavra inteira (ou com a letra correta)
+		var label_slot = slot.get_node("Label")
+		label_slot.text = selecionadas[i]["palavra"][0]  # Exibe apenas a primeira letra
+
+	embaralha(selecionadas)  # Embaralha as letras corretamente
+	mostrar_letras(selecionadas)  # Exibe as letras embaralhadas nos slots
+
+# Após preencher as letras, podemos tornar as labels visíveis
+	for i in range(16):
+		var frame_vazio = $Board.get_node("Slot" + str(i + 1))
+		var label = frame_vazio.get_node("Label")
+		label.visible = false
 
 func mostrar_letras(selecionadas):
 	var letras = []
-
+	
+	# Coleta todas as letras das palavras selecionadas
 	for selecionada in selecionadas:
-		letras.append_array(selecionada["palavra"].split(""))
+		letras.append_array(selecionada["palavra"].split(""))  # Divide as palavras em letras
 
 	var grid = $Board
+	var i = 0  # A variável 'i' será usada para preencher os slots com as letras corretas
+	
+	# Preenche os slots com as letras embaralhadas
+	for palavra in selecionadas:
+		for letra in palavra["palavra"].split(""):
+			var frame_vazio = grid.get_node("Slot" + str(i + 1))
+			var label = frame_vazio.get_node("Label")
+			label.text = letra  # Atribui uma letra para o slot correspondente
+			i += 1
 
-	for i in range(16):
-		var frame_vazio = grid.get_node("Slot" + str(i + 1))
-		var label = frame_vazio.get_node("Label")  
-
-		if i < len(letras):
-			label.text = letras[i]
-
-		else:
-			label.text = ""
-
+	# Preenche as letras aleatórias nas posições restantes (de 4 até 16, por exemplo)
+	var letras_aleatorias = []
+	var alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	for j in range(12):  # Adiciona 12 letras aleatórias
+		letras_aleatorias.append(alfabeto[randi() % alfabeto.length()])
+	
+	letras_aleatorias.shuffle()  # Embaralha as letras aleatórias
+	for j in range(i, 16):  # Preenche os slots restantes com letras aleatórias
+		var frame_vazio = grid.get_node("Slot" + str(j + 1))
+		var label = frame_vazio.get_node("Label")
+		label.text = letras_aleatorias.pop_front()  # Pega uma letra aleatória para o slot
 
 func embaralha(selecionadas):
 	# Coleta todas as letras das palavras selecionadas
