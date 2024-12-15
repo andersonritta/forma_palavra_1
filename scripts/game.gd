@@ -1,6 +1,5 @@
 extends Node2D
 
-var tempo_decorrido = 0.0
 var numero_da_fase = 1
 var palavras_usadas = []
 var palavras = [
@@ -35,6 +34,17 @@ var palavras = [
 ]
 
 var slots = []
+var contador_acertos = 0
+var contador_erros = 0
+var total_acertos = 0
+var total_erros = 0
+var resultados_fases = []
+
+var tempo_decorrido = 0.0
+var tempo_fase_atual = 0.0  # Tempo da fase atual
+var tempos_fases = []       # Lista para armazenar o tempo de cada fase
+
+
 
 func carregar_imagens():
 	palavras.shuffle()
@@ -145,16 +155,45 @@ func _ready():
 
 
 func _on_botao_proxima_fase_pressed():
-	numero_da_fase += 1
-	$Interface/BotOFase/FaseLabel.text = "Fase " + str(numero_da_fase)
-	carregar_imagens()
-	for obj in get_tree().get_nodes_in_group("draggable"):
-		if obj.has_method("reset_position"):
-			obj.reset_position()
+	# Salva os resultados da fase atual
+	resultados_fases.append({
+		"fase": numero_da_fase,
+		"acertos": contador_acertos,
+		"erros": contador_erros,
+		"tempo": tempo_fase_atual
+	})
+	
+	 # Adiciona o tempo da fase atual à lista de tempos
+	tempos_fases.append(tempo_fase_atual)
+	
+	## Exibe o resumo da fase
+	#print("Resumo da Fase ", numero_da_fase)
+	#print("Acertos nesta fase: ", contador_acertos)
+	#print("Erros nesta fase: ", contador_erros)
+	print("Tempo nesta fase: %.1f segundos" % tempo_fase_atual)
+	
+	# Reinicia os contadores para a nova fase
+	contador_acertos = 0
+	contador_erros = 0
+	tempo_fase_atual = 0.0
+	
+	if numero_da_fase >= 7:
+		finalizar_jogo()
+	else:
+		numero_da_fase += 1
+		$Interface/BotOFase/FaseLabel.text = "Fase " + str(numero_da_fase)
+		carregar_imagens()
+	
+		for obj in get_tree().get_nodes_in_group("draggable"):
+			if obj.has_method("reset_position"):
+				obj.reset_position()
+
+
 
 
 func _on_timer_jogo_timeout():
 	tempo_decorrido += 0.1
+	tempo_fase_atual += 0.1
 	$Interface/TimerLabel.text = "Tempo: %.1f segundos" % tempo_decorrido
 
 
@@ -164,3 +203,35 @@ func _on_options_pressed() -> void:
 
 func _on_menu_pressed() -> void:
 	Menu.show_pause_menu()
+
+func registrar_acerto():
+	contador_acertos += 1
+	total_acertos += 1
+	print("Acerto registrado! Total de acertos: ", contador_acertos)
+
+func registrar_erro():
+	contador_erros += 1
+	total_erros += 1
+	print("Erro registrado! Total de erros: ", contador_erros)
+	
+func finalizar_jogo():
+	print("Jogo Finalizado!")
+	print("Resumo Total:")
+
+	# Calcula o tempo total do jogo somando todos os tempos das fases
+	var tempo_total = 0.0
+	for tempo in tempos_fases:
+		tempo_total += tempo
+		print("tempo_total")
+
+	# Exibe os resultados por fase, incluindo o tempo de cada uma
+	for resultado in resultados_fases:
+		print("Fase ", resultado["fase"], 
+			  "- Acertos: ", resultado["acertos"], 
+			  "Erros: ", resultado["erros"], 
+			  "Tempo: %.1f segundos" % resultado["tempo"])
+
+	# Exibe os totais acumulados
+	print("Total de Acertos: ", total_acertos)
+	print("Total de Erros: ", total_erros)
+	print("Tempo Total do Jogo: %.1f segundos" % tempo_total)

@@ -25,11 +25,10 @@ Desenvolver um jogo que estimule o aprendizado e a interação, ao mesmo tempo q
 - [ ] **Responsividade**: Ajustar a interface para diferentes dispositivos.
 - [ ] **Sistema de Dicas**: Apresentar dicas após um determinado tempo sem interação.
 - [ ] **Coleta de Dados**:
-  - [ ] Tempo total gasto para completar cada fase.
-  - [ ] Número de dicas solicitadas.
-  - [ ] Número de erros cometidos.
+  - [x] Tempo total gasto para completar cada fase.
+  - [x] Quantidade de acertos.
+  - [x] Quantidade de erros cometidos.
   - [ ] Ordem em que as palavras foram formadas.
-  - [ ] Quantidade de acertos.
   - [x] Verificação de correspondência e posição correta das letras.
   - [ ] Letras selecionadas pelo jogador.
 - [ ] **Exportar JSON**: Criar uma funcionalidade para exportar os dados coletados em formato JSON.
@@ -39,8 +38,8 @@ Desenvolver um jogo que estimule o aprendizado e a interação, ao mesmo tempo q
   - [x] Botão para **Passar de Fase**.
   - [x] Botão para **Sair do Jogo**.
 - [ ] **Efeitos Sonoros**:
-  - [ ] Sons ao completar corretamente uma palavra.
-  - [ ] Sons ao errar uma palavra.
+  - [ ] Sons ao acertar uma letra.
+  - [ ] Sons ao errar uma letra.
 - [x] **Música de Fundo**: Adicionar uma música relaxante ao jogo.
 - [X] **Ajuste de Volume**: Permitir que o jogador ajuste o volume da música e dos sons do jogo.
 - [ ] **Ativar/Desativar Dicas**: Configuração para habilitar ou desabilitar o sistema de dicas.
