@@ -21,6 +21,7 @@ OptionsMenu="*res://scenes/options_menu.tscn"
 Menu="*res://scenes/menu.tscn"
 GlobalAudioStreamPlayer="*res://scenes/audio_stream_player.tscn"
 CreditosMenu="*res://scenes/creditos_menu.tscn"
+Letter="*res://scenes/letter.tscn"
 
 [gui]
 

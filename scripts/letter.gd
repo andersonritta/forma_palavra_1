@@ -5,9 +5,11 @@ var dropable_areas = []
 var offset: Vector2
 var initialPos: Vector2
 var letra: String  # Armazena a letra associada
+var origin
 
 func _ready() -> void:
 	initialPos = position  # Salva a posição inicial da letra
+	origin = position
 
 # Defina a letra associada à instância da letra
 func set_letra(nova_letra: String) -> void:
@@ -71,3 +73,6 @@ func get_closest_dropable() -> Node2D:
 			closest_area = area
 
 	return closest_area
+
+func reset_position():
+	position = origin

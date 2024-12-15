@@ -148,6 +148,9 @@ func _on_botao_proxima_fase_pressed():
 	numero_da_fase += 1
 	$Interface/BotOFase/FaseLabel.text = "Fase " + str(numero_da_fase)
 	carregar_imagens()
+	for obj in get_tree().get_nodes_in_group("draggable"):
+		if obj.has_method("reset_position"):
+			obj.reset_position()
 
 
 func _on_timer_jogo_timeout():

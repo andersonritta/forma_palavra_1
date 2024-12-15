@@ -49,17 +49,17 @@ Formar palavras de 4 letras relacionadas às imagens exibidas na tela dentro de 
 
 5. **Feedback Visual e Sonoro**  
    - Sons e animações para feedback:
-     - Ao formar uma palavra corretamente, um som de comemoração e uma animação positiva serão exibidos.  
-     - Ao errar, um som suave de erro e um destaque visual indicarão a falha.  
+	 - Ao formar uma palavra corretamente, um som de comemoração e uma animação positiva serão exibidos.  
+	 - Ao errar, um som suave de erro e um destaque visual indicarão a falha.  
 
 6. **Coleta de Dados**  
    - Durante o jogo, os seguintes dados serão registrados:
-     - Tempo gasto para completar cada fase.  
-     - Número de dicas.  
-     - Número de erros cometidos.  
-     - Ordem em que as palavras foram formadas.  
-     - Quantidade de acertos.  
-     - Letras selecionadas pelo jogador.  
+	 - Tempo gasto para completar cada fase.  
+	 - Número de dicas.  
+	 - Número de erros cometidos.  
+	 - Ordem em que as palavras foram formadas.  
+	 - Quantidade de acertos.  
+	 - Letras selecionadas pelo jogador.  
 
 7. **Exportação de Dados**  
    - Os dados coletados podem ser exportados em formato JSON para análise.  
