@@ -167,9 +167,9 @@ func _on_botao_proxima_fase_pressed():
 	tempos_fases.append(tempo_fase_atual)
 	
 	## Exibe o resumo da fase
-	#print("Resumo da Fase ", numero_da_fase)
-	#print("Acertos nesta fase: ", contador_acertos)
-	#print("Erros nesta fase: ", contador_erros)
+	print("Resumo da Fase ", numero_da_fase)
+	print("Acertos nesta fase: ", contador_acertos)
+	print("Erros nesta fase: ", contador_erros)
 	print("Tempo nesta fase: %.1f segundos" % tempo_fase_atual)
 	
 	# Reinicia os contadores para a nova fase
