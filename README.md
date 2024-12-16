@@ -22,7 +22,7 @@ Desenvolver um jogo que estimule o aprendizado e a interação, ao mesmo tempo q
 ### Funcionalidades a Serem Desenvolvidas
 - [x] **Randomização de Fases**: Garantir que as imagens e palavras não se repitam durante o jogo.
 - [x] **Timer Oculto**: Adicionar um timer sem exibi-lo ao jogador.
-- [ ] **Responsividade**: Ajustar a interface para diferentes dispositivos.
+- [x] **Responsividade**: Ajustar a interface para diferentes dispositivos.
 - [ ] **Sistema de Dicas**: Apresentar dicas após um determinado tempo sem interação.
 - [ ] **Coleta de Dados**:
   - [x] Tempo total gasto para completar cada fase.
@@ -30,8 +30,7 @@ Desenvolver um jogo que estimule o aprendizado e a interação, ao mesmo tempo q
   - [x] Quantidade de erros cometidos.
   - [ ] Ordem em que as palavras foram formadas.
   - [x] Verificação de correspondência e posição correta das letras.
-  - [ ] Letras selecionadas pelo jogador.
-- [ ] **Exportar JSON**: Criar uma funcionalidade para exportar os dados coletados em formato JSON.
+- [ ] **Exportar CSV**: Criar uma funcionalidade para exportar os dados coletados em formato CSV.
 - [ ] **Exportar Aplicativo para Mobile**: Adaptar o jogo e exportá-lo como aplicativo para dispositivos Android.
 - [ ] **Adicionar e Configurar Botões**:
   - [x] Botão de **Configurações**.
@@ -51,7 +50,7 @@ Desenvolver um jogo que estimule o aprendizado e a interação, ao mesmo tempo q
 
 - **Godot Engine**: Ferramenta utilizada para o desenvolvimento do jogo.
 - **Figma**: Utilizado para prototipagem e design.
-- **JSON**: Para armazenamento e exportação dos dados coletados.
+- **CSV**: Para armazenamento e exportação dos dados coletados.
 
 ---
 
