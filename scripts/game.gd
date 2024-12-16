@@ -69,8 +69,8 @@ func carregar_imagens():
 
 		# Configurando as letras corretas para os slots
 		var slot = $Board.get_node("Slot" + str(i + 1))  # Slot correspondente
-		slot.letra_correta = selecionadas[i]["palavra"]  # Configura a palavra correta no slot
-
+		#slot.letra_correta = selecionadas[i]["palavra"]  # Configura a palavra correta no slot
+		slot.resetar_slot()
 		# Atualizando a label do slot com a palavra inteira (ou com a letra correta)
 		var label_slot = slot.get_node("Label")
 		label_slot.text = selecionadas[i]["palavra"][0]  # Exibe apenas a primeira letra
