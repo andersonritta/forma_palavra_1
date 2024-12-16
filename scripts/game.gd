@@ -83,6 +83,12 @@ func carregar_imagens():
 		var frame_vazio = $Board.get_node("Slot" + str(i + 1))
 		var label = frame_vazio.get_node("Label")
 		label.visible = false
+		Arrays.slots_id.append(frame_vazio)
+		Arrays.slots.append(label.text)
+		
+	print(Arrays.slots_id)
+	print(Arrays.slots)
+	print(Arrays.letters)
 
 func mostrar_letras(selecionadas):
 	var letras = []
@@ -151,7 +157,7 @@ func embaralha(selecionadas):
 func _ready():
 	$Interface/BotOFase/FaseLabel.text = "Fase " + str(numero_da_fase)
 	carregar_imagens()
-	$Interface/TimerLabel.visible = true
+	$Interface/TimerLabel.visible = false
 
 
 func _on_botao_proxima_fase_pressed():
@@ -178,8 +184,12 @@ func _on_botao_proxima_fase_pressed():
 	tempo_fase_atual = 0.0
 	
 	if numero_da_fase >= 7:
-		finalizar_jogo()
+		pass
+		#finalizar_jogo()
 	else:
+		Arrays.compare()
+		Arrays.reset()
+	
 		numero_da_fase += 1
 		$Interface/BotOFase/FaseLabel.text = "Fase " + str(numero_da_fase)
 		carregar_imagens()
@@ -187,8 +197,6 @@ func _on_botao_proxima_fase_pressed():
 		for obj in get_tree().get_nodes_in_group("draggable"):
 			if obj.has_method("reset_position"):
 				obj.reset_position()
-
-
 
 
 func _on_timer_jogo_timeout():

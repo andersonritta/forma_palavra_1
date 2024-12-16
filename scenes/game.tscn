@@ -46,6 +46,7 @@ theme_override_font_sizes/font_size = 23
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="TimerJogo" type="Timer" parent="Interface"]
 wait_time = 0.1
@@ -56,6 +57,7 @@ offset_left = 64.0
 offset_right = 320.0
 offset_bottom = 64.0
 text = "Tempo:"
+metadata/_edit_use_anchors_ = true
 
 [node name="Options" type="TouchScreenButton" parent="Interface"]
 position = Vector2(960, 64)
@@ -879,6 +881,7 @@ theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="Interface/TimerJogo" to="." method="_on_timer_jogo_timeout"]
 [connection signal="pressed" from="Interface/Options" to="." method="_on_options_pressed"]
