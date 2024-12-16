@@ -18,8 +18,7 @@ func set_letra(nova_letra: String) -> void:
 func _input(event):
 	# Detectar início do clique ou toque
 	if (event is InputEventScreenTouch or event is InputEventMouseButton) and event.pressed and draggable:
-		initialPos = global_position
-		offset = event.position - global_position
+		pass
 	
 	# Detectar arrasto do mouse ou dedo
 	elif (event is InputEventScreenDrag or event is InputEventMouseMotion) and draggable:
