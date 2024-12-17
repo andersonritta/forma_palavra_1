@@ -7,7 +7,7 @@ var palavras = [
 	{"imagem": "res://assets/imgs/cards/imagem_boca.webp", "palavra": "BOCA"},
 	{"imagem": "res://assets/imgs/cards/imagem_bola.webp", "palavra": "BOLA"},
 	{"imagem": "res://assets/imgs/cards/imagem_bolo.webp", "palavra": "BOLO"},
-	{"imagem": "res://assets/imgs/cards/imagem_bone.webp", "palavra": "BONE"},
+	{"imagem": "res://assets/imgs/cards/imagem_bone.webp", "palavra": "BONÉ"},
 	{"imagem": "res://assets/imgs/cards/imagem_bota.webp", "palavra": "BOTA"},
 	{"imagem": "res://assets/imgs/cards/imagem_casa.webp", "palavra": "CASA"},
 	{"imagem": "res://assets/imgs/cards/imagem_copo.webp", "palavra": "COPO"},
@@ -43,10 +43,11 @@ var resultados_fases = []
 var tempo_decorrido = 0.0
 var tempo_fase_atual = 0.0  # Tempo da fase atual
 var tempos_fases = []       # Lista para armazenar o tempo de cada fase
-
-
+var historico_palavras = []
+var palavras_formadas = [] 
 
 func carregar_imagens():
+	Arrays.reset()
 	palavras.shuffle()
 	var palavras_disponiveis = []
 
@@ -61,6 +62,13 @@ func carregar_imagens():
 	palavras_disponiveis.shuffle()
 	var selecionadas = palavras_disponiveis.slice(0, 4)
 	palavras_usadas.append_array(selecionadas)
+
+	# Salva as palavras geradas para esta fase no histórico
+	var palavras_da_fase = []
+	for p in selecionadas:
+		palavras_da_fase.append_array(p["palavra"].split(""))
+	historico_palavras.append(palavras_da_fase)  # Adiciona palavras geradas na fase ao histórico
+
 
 	# Associando as letras corretas aos slots
 	for i in range(4):
@@ -83,6 +91,14 @@ func carregar_imagens():
 		var frame_vazio = $Board.get_node("Slot" + str(i + 1))
 		var label = frame_vazio.get_node("Label")
 		label.visible = false
+		Arrays.slots_id.append(frame_vazio)
+		Arrays.slot.append(label.text)
+		
+	#print(Arrays.slots_id)
+	print(Arrays.slot)
+	print(Arrays.letters)
+	
+	
 
 func mostrar_letras(selecionadas):
 	var letras = []
@@ -149,20 +165,27 @@ func embaralha(selecionadas):
 
 
 func _ready():
+	Arrays.reset()
 	$Interface/BotOFase/FaseLabel.text = "Fase " + str(numero_da_fase)
 	carregar_imagens()
-	$Interface/TimerLabel.visible = true
+	$Interface/TimerLabel.visible = false
 
 
 func _on_botao_proxima_fase_pressed():
+	SoundManager.play_click()
 	# Salva os resultados da fase atual
 	resultados_fases.append({
 		"fase": numero_da_fase,
 		"acertos": contador_acertos,
 		"erros": contador_erros,
-		"tempo": tempo_fase_atual
+		"tempo": tempo_fase_atual,
+		"slot": Arrays.slot,   
+		"letters": Arrays.letters,
+		"results": Arrays.result,
+		"palavras_formadas": palavras_formadas
 	})
 	
+	palavras_formadas.append(Arrays.letters)
 	 # Adiciona o tempo da fase atual à lista de tempos
 	tempos_fases.append(tempo_fase_atual)
 	
@@ -170,7 +193,7 @@ func _on_botao_proxima_fase_pressed():
 	#print("Resumo da Fase ", numero_da_fase)
 	#print("Acertos nesta fase: ", contador_acertos)
 	#print("Erros nesta fase: ", contador_erros)
-	print("Tempo nesta fase: %.1f segundos" % tempo_fase_atual)
+	#print("Tempo nesta fase: %.1f segundos" % tempo_fase_atual)
 	
 	# Reinicia os contadores para a nova fase
 	contador_acertos = 0
@@ -178,8 +201,14 @@ func _on_botao_proxima_fase_pressed():
 	tempo_fase_atual = 0.0
 	
 	if numero_da_fase >= 7:
+		Arrays.compare()
 		finalizar_jogo()
+		Arrays.reset()
+		get_tree().change_scene_to_file("res://scenes/FimDeJogo.tscn")
 	else:
+		Arrays.compare()
+		Arrays.reset()
+	
 		numero_da_fase += 1
 		$Interface/BotOFase/FaseLabel.text = "Fase " + str(numero_da_fase)
 		carregar_imagens()
@@ -187,8 +216,6 @@ func _on_botao_proxima_fase_pressed():
 		for obj in get_tree().get_nodes_in_group("draggable"):
 			if obj.has_method("reset_position"):
 				obj.reset_position()
-
-
 
 
 func _on_timer_jogo_timeout():
@@ -199,10 +226,11 @@ func _on_timer_jogo_timeout():
 
 func _on_options_pressed() -> void:
 	OptionsMenu.show_pause_menu()
-
+	SoundManager.play_click()
 
 func _on_menu_pressed() -> void:
 	Menu.show_pause_menu()
+	SoundManager.play_click()
 
 func registrar_acerto():
 	contador_acertos += 1
@@ -219,19 +247,96 @@ func finalizar_jogo():
 	print("Resumo Total:")
 
 	# Calcula o tempo total do jogo somando todos os tempos das fases
+	var tempo_total = calcular_tempo_total(tempos_fases)
+
+	# Atualiza os resultados dividindo os valores de acertos e erros por 2
+	atualizar_resultados(resultados_fases)
+
+	# Exibe os resultados por fase
+	exibir_resultados_fases(resultados_fases)
+
+	# Exibe o histórico de palavras geradas
+	exibir_palavras_geradas(historico_palavras)
+
+	# Exibe as palavras formadas por fase
+	exibir_palavras_formadas(palavras_formadas)
+
+	# Comparar as palavras geradas com as formadas
+	print("-------------------------------------------------------------------")
+	comparar_palavras()
+
+	# Exibe os totais acumulados
+	exibir_totais_acumulados(total_acertos, total_erros, tempo_total)
+	
+	# Agora, exporta os dados para o CSV utilizando o autoloader
+	CsvExporter.exportar_resultados_csv(resultados_fases, historico_palavras, palavras_formadas, tempos_fases)
+
+
+# Função para calcular o tempo total do jogo
+func calcular_tempo_total(tempos_fases: Array) -> float:
 	var tempo_total = 0.0
 	for tempo in tempos_fases:
 		tempo_total += tempo
-		print("tempo_total")
+	return tempo_total
 
-	# Exibe os resultados por fase, incluindo o tempo de cada uma
+
+# Função para atualizar os resultados dividindo os acertos e erros por 2
+func atualizar_resultados(resultados_fases: Array):
 	for resultado in resultados_fases:
-		print("Fase ", resultado["fase"], 
-			  "- Acertos: ", resultado["acertos"], 
-			  "Erros: ", resultado["erros"], 
-			  "Tempo: %.1f segundos" % resultado["tempo"])
+		resultado["acertos"] /= 2
+		resultado["erros"] /= 2
 
-	# Exibe os totais acumulados
-	print("Total de Acertos: ", total_acertos)
-	print("Total de Erros: ", total_erros)
+
+# Função para exibir os resultados por fase
+func exibir_resultados_fases(resultados_fases: Array):
+	for resultado in resultados_fases:
+		print("Fase %d:" % resultado["fase"])
+		print("  Acertos: %d" % resultado["acertos"])
+		print("  Erros: %d" % resultado["erros"])
+		print("  Tempo: %.1f segundos" % resultado["tempo"])
+		#print("  Resultado: %s" % str(resultado["results"]))
+		#print("  Palavras montadas: %s" % str(resultado["palavras_formadas"]))
+		print("-------------------------------------------------------------------------------------")
+
+
+# Função para exibir o histórico das palavras geradas por fase
+func exibir_palavras_geradas(historico_palavras: Array):
+	print("Palavras geradas por fase:")
+	for i in range(len(historico_palavras)):
+		print("Fase %d: %s" % [i + 1, str(historico_palavras[i])])
+
+
+# Função para exibir as palavras formadas por fase
+func exibir_palavras_formadas(palavras_formadas: Array):
+	print("Palavras Formadas por Fase:")
+	for i in range(len(palavras_formadas)):
+		print("Fase %d: %s" % [i + 1, str(palavras_formadas[i])])
+
+
+# Função para exibir os totais acumulados
+func exibir_totais_acumulados(total_acertos: int, total_erros: int, tempo_total: float):
+	print("Total de Acertos: %d" % (total_acertos / 2))
+	print("Total de Erros: %d" % (total_erros / 2))
 	print("Tempo Total do Jogo: %.1f segundos" % tempo_total)
+
+	
+	
+func comparar_palavras():
+	# Lista para armazenar os resultados da comparação (acertos e erros)
+	var resultados_comparacao = []
+
+	# Percorrer cada fase para comparar as palavras
+	for i in range(len(historico_palavras)):
+		var fase_historico = historico_palavras[i]
+		var fase_formada = palavras_formadas[i]
+
+		# Verificar se o conteúdo de ambas as listas (historico e formadas) são iguais
+		if fase_historico == fase_formada:
+			resultados_comparacao.append("CORRETO")
+		else:
+			resultados_comparacao.append("ERRADO")
+
+	# Exibir os resultados da comparação
+	print("Comparação entre palavras esperadas e formadas:")
+	for i in range(len(resultados_comparacao)):
+		print("Fase %d: %s" % [i + 1, resultados_comparacao[i]])

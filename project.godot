@@ -22,6 +22,15 @@ Menu="*res://scenes/menu.tscn"
 GlobalAudioStreamPlayer="*res://scenes/audio_stream_player.tscn"
 CreditosMenu="*res://scenes/creditos_menu.tscn"
 Letter="*res://scenes/letter.tscn"
+Arrays="*res://scripts/arrays.gd"
+CsvExporter="*res://scripts/csv_exporter.gd"
+SoundManager="*res://scripts/SoundManager.gd"
+ConfigPlayer="*res://scenes/config_player.tscn"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/handheld/orientation=4
 
 [gui]
 
@@ -42,3 +51,4 @@ pointing/emulate_touch_from_mouse=true
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

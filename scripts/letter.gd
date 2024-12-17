@@ -27,11 +27,11 @@ func _input(event):
 	
 	# Detectar final do clique ou toque
 	elif (event is InputEventScreenTouch or event is InputEventMouseButton) and not event.pressed and draggable:
+		SoundManager.play_dropLetter()
 		var tween = get_tree().create_tween()
-
 		if dropable_areas.size() > 0:
 			var closest_area = get_closest_dropable()
-
+			
 			if closest_area:
 				# Passa a letra para o slot
 				closest_area.receber_letra(self)  # Passa a referência da letra

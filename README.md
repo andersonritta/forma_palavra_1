@@ -24,21 +24,21 @@ Desenvolver um jogo que estimule o aprendizado e a interação, ao mesmo tempo q
 - [x] **Timer Oculto**: Adicionar um timer sem exibi-lo ao jogador.
 - [x] **Responsividade**: Ajustar a interface para diferentes dispositivos.
 - [ ] **Sistema de Dicas**: Apresentar dicas após um determinado tempo sem interação.
-- [ ] **Coleta de Dados**:
+- [x] **Coleta de Dados**:
   - [x] Tempo total gasto para completar cada fase.
   - [x] Quantidade de acertos.
   - [x] Quantidade de erros cometidos.
-  - [ ] Ordem em que as palavras foram formadas.
+  - [x] Ordem em que as palavras foram formadas.
   - [x] Verificação de correspondência e posição correta das letras.
-- [ ] **Exportar CSV**: Criar uma funcionalidade para exportar os dados coletados em formato CSV.
+- [x] **Exportar CSV**: Criar uma funcionalidade para exportar os dados coletados em formato CSV.
 - [ ] **Exportar Aplicativo para Mobile**: Adaptar o jogo e exportá-lo como aplicativo para dispositivos Android.
-- [ ] **Adicionar e Configurar Botões**:
+- [x] **Adicionar e Configurar Botões**:
   - [x] Botão de **Configurações**.
   - [x] Botão para **Passar de Fase**.
   - [x] Botão para **Sair do Jogo**.
-- [ ] **Efeitos Sonoros**:
-  - [ ] Sons ao acertar uma letra.
-  - [ ] Sons ao errar uma letra.
+- [x] **Efeitos Sonoros**:
+  - [x] Sons ao acertar uma letra.
+  - [x] Sons ao errar uma letra.
 - [x] **Música de Fundo**: Adicionar uma música relaxante ao jogo.
 - [X] **Ajuste de Volume**: Permitir que o jogador ajuste o volume da música e dos sons do jogo.
 - [ ] **Ativar/Desativar Dicas**: Configuração para habilitar ou desabilitar o sistema de dicas.

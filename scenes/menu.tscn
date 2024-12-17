@@ -106,4 +106,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="PopupMenu/IconClose" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="BotaoReturn" to="." method="_on_botao_return_pressed"]
+[connection signal="pressed" from="BotaoReset" to="." method="_on_botao_reset_pressed"]
 [connection signal="pressed" from="BotaoMainMenu" to="." method="_on_botao_main_menu_pressed"]

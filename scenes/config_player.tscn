@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8io0623hh2rs"]
+
+[ext_resource type="Script" path="res://scripts/config_player.gd" id="1_d3flp"]
+[ext_resource type="Texture2D" uid="uid://csedipa34hts8" path="res://assets/imgs/popup_menu_jogo (1).webp" id="2_cvau4"]
+[ext_resource type="Texture2D" uid="uid://dxwx0g2y6oiua" path="res://assets/icons/icon_close.svg" id="3_dqsic"]
+[ext_resource type="Texture2D" uid="uid://c8g40lpeffn46" path="res://assets/icons/icon_close_pressionado.webp" id="4_08ebc"]
+
+[node name="ConfigPlayer" type="CanvasLayer"]
+script = ExtResource("1_d3flp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 1, 1, 0)
+
+[node name="PopupMenuJogo" type="Sprite2D" parent="."]
+position = Vector2(576, 320)
+texture = ExtResource("2_cvau4")
+
+[node name="Fechar" type="TouchScreenButton" parent="."]
+position = Vector2(768, 160)
+scale = Vector2(1.6, 1.6)
+texture_normal = ExtResource("3_dqsic")
+texture_pressed = ExtResource("4_08ebc")
+
+[connection signal="pressed" from="Fechar" to="." method="_on_fechar_pressed"]
