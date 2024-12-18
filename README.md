@@ -23,7 +23,6 @@ Desenvolver um jogo que estimule o aprendizado e a interação, ao mesmo tempo q
 - [x] **Randomização de Fases**: Garantir que as imagens e palavras não se repitam durante o jogo.
 - [x] **Timer Oculto**: Adicionar um timer sem exibi-lo ao jogador.
 - [x] **Responsividade**: Ajustar a interface para diferentes dispositivos.
-- [ ] **Sistema de Dicas**: Apresentar dicas após um determinado tempo sem interação.
 - [x] **Coleta de Dados**:
   - [x] Tempo total gasto para completar cada fase.
   - [x] Quantidade de acertos.
@@ -31,7 +30,7 @@ Desenvolver um jogo que estimule o aprendizado e a interação, ao mesmo tempo q
   - [x] Ordem em que as palavras foram formadas.
   - [x] Verificação de correspondência e posição correta das letras.
 - [x] **Exportar CSV**: Criar uma funcionalidade para exportar os dados coletados em formato CSV.
-- [ ] **Exportar Aplicativo para Mobile**: Adaptar o jogo e exportá-lo como aplicativo para dispositivos Android.
+- [X] **Exportar Aplicativo para Mobile**: Adaptar o jogo e exportá-lo como aplicativo para dispositivos Android.
 - [x] **Adicionar e Configurar Botões**:
   - [x] Botão de **Configurações**.
   - [x] Botão para **Passar de Fase**.
@@ -41,7 +40,7 @@ Desenvolver um jogo que estimule o aprendizado e a interação, ao mesmo tempo q
   - [x] Sons ao errar uma letra.
 - [x] **Música de Fundo**: Adicionar uma música relaxante ao jogo.
 - [X] **Ajuste de Volume**: Permitir que o jogador ajuste o volume da música e dos sons do jogo.
-- [ ] **Ativar/Desativar Dicas**: Configuração para habilitar ou desabilitar o sistema de dicas.
+- [x] **Ativar/Desativar Dicas**: Configuração para habilitar ou desabilitar o sistema de dicas.
 
 
 ---
@@ -58,4 +57,11 @@ Desenvolver um jogo que estimule o aprendizado e a interação, ao mesmo tempo q
 
 O projeto é organizado da seguinte forma:
 
-- WIP
+├── assets
+│   ├── Audio
+│   ├── fonts
+│   ├── icons
+│   └── imgs
+│       └── cards
+├── scenes
+└── scripts

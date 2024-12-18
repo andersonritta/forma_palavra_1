@@ -25,6 +25,26 @@ position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_pjmqv")
 
+[node name="CheckButton" type="CheckButton" parent="Interface"]
+offset_top = 24.0
+offset_right = 144.0
+offset_bottom = 51.0
+action_mode = 0
+text = "Relógio"
+
+[node name="Mutar" type="CheckButton" parent="Interface"]
+offset_right = 44.0
+offset_bottom = 24.0
+text = "Mutar Dicas"
+
+[node name="NumVidas" type="Label" parent="Interface"]
+offset_left = 960.0
+offset_top = 16.0
+offset_right = 1216.0
+offset_bottom = 80.0
+text = "Número de Vidas:"
+metadata/_edit_use_anchors_ = true
+
 [node name="Logo" type="Sprite2D" parent="Interface"]
 position = Vector2(576, 80)
 scale = Vector2(0.204717, 0.204717)
@@ -53,10 +73,17 @@ wait_time = 0.1
 autostart = true
 
 [node name="TimerLabel" type="Label" parent="Interface"]
-offset_left = 64.0
-offset_right = 320.0
-offset_bottom = 64.0
+anchors_preset = -1
+anchor_left = 0.0416667
+anchor_top = 0.0694444
+anchor_right = 0.0416667
+anchor_bottom = 0.0694444
+offset_left = 912.0
+offset_top = -69.0
+offset_right = 1168.0
+offset_bottom = -5.0
 text = "Tempo:"
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Options" type="TouchScreenButton" parent="Interface"]
@@ -896,6 +923,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[connection signal="toggled" from="Interface/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="toggled" from="Interface/Mutar" to="." method="_on_mutar_toggled"]
 [connection signal="timeout" from="Interface/TimerJogo" to="." method="_on_timer_jogo_timeout"]
 [connection signal="pressed" from="Interface/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Interface/Menu" to="." method="_on_menu_pressed"]

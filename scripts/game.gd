@@ -1,5 +1,12 @@
 extends Node2D
 
+var config_player = preload("res://scripts/config_player.gd")
+
+var vidas = ConfigPlayer.get_num_vidas()  # Número inicial de vidas
+var num_dicas = ConfigPlayer.get_num_dicas()  # Número inicial de 
+var is_muted = false 
+var vidas_iniciais = ConfigPlayer.get_num_vidas()
+
 var numero_da_fase = 1
 var palavras_usadas = []
 var palavras = [
@@ -167,12 +174,15 @@ func embaralha(selecionadas):
 func _ready():
 	Arrays.reset()
 	$Interface/BotOFase/FaseLabel.text = "Fase " + str(numero_da_fase)
+	$Interface/NumVidas.text = "Vidas: " + str(ConfigPlayer.numVidas)
+	#$Interface/NumDicas.text = "Dicas: " + str(ConfigPlayer.numDicas)
+	var sound_manager = get_node("res://scripts/SoundManager.gd")
 	carregar_imagens()
 	$Interface/TimerLabel.visible = false
-
-
+	
 func _on_botao_proxima_fase_pressed():
 	SoundManager.play_click()
+	
 	# Salva os resultados da fase atual
 	resultados_fases.append({
 		"fase": numero_da_fase,
@@ -189,11 +199,24 @@ func _on_botao_proxima_fase_pressed():
 	 # Adiciona o tempo da fase atual à lista de tempos
 	tempos_fases.append(tempo_fase_atual)
 	
-	## Exibe o resumo da fase
-	#print("Resumo da Fase ", numero_da_fase)
-	#print("Acertos nesta fase: ", contador_acertos)
-	#print("Erros nesta fase: ", contador_erros)
-	#print("Tempo nesta fase: %.1f segundos" % tempo_fase_atual)
+	# Comparar as palavras geradas e formadas
+	var palavras_geradas = historico_palavras[numero_da_fase - 1]
+	var palavras_da_fase_formadas = Arrays.letters
+
+	if palavras_geradas == palavras_da_fase_formadas:
+		print("Palavras CORRETAS! Avançando para próxima fase.")
+		SoundManager.play_fase_correta()
+	else:
+		print("Palavras INCORRETAS! Perdendo 1 vida.")
+		ConfigPlayer.numVidas -= 1  # Decrementa uma vida usando o autoloader
+		print("Vidas restantes: ", ConfigPlayer.numVidas)
+		$Interface/NumVidas.text = "Vidas: " + str(ConfigPlayer.numVidas)
+		SoundManager.play_fase_errada()
+
+		if ConfigPlayer.numVidas <= 0:
+			finalizar_jogo()
+			get_tree().change_scene_to_file("res://scenes/FimDeJogo.tscn")
+			return  # Evita continuar o processo após o fim do jogo
 	
 	# Reinicia os contadores para a nova fase
 	contador_acertos = 0
@@ -270,6 +293,9 @@ func finalizar_jogo():
 	
 	# Agora, exporta os dados para o CSV utilizando o autoloader
 	CsvExporter.exportar_resultados_csv(resultados_fases, historico_palavras, palavras_formadas, tempos_fases)
+	
+	ConfigPlayer.numVidas = vidas_iniciais
+	print("Vidas resetadas para: ", ConfigPlayer.numVidas)
 
 
 # Função para calcular o tempo total do jogo
@@ -340,3 +366,18 @@ func comparar_palavras():
 	print("Comparação entre palavras esperadas e formadas:")
 	for i in range(len(resultados_comparacao)):
 		print("Fase %d: %s" % [i + 1, resultados_comparacao[i]])
+
+
+func _on_check_button_toggled(checked: bool) -> void:
+	if checked == true:
+		$Interface/TimerLabel.visible = true
+
+	if checked == false:
+		$Interface/TimerLabel.visible = false
+
+
+func _on_mutar_toggled(checked: bool) -> void:
+	is_muted = checked  # Muda o estado do mute
+	# Opcionalmente, pode-se alterar o texto ou a visibilidade de algo na interface se necessário
+	  # Se o botão estiver marcado, mudo o som
+	SoundManager.is_muted = is_muted  # Atualiza o estado de mute no SoundManager

@@ -74,9 +74,9 @@ scale = Vector2(0.457577, 0.429022)
 texture_normal = ExtResource("8_xd8ie")
 texture_pressed = ExtResource("11_64jyg")
 
-[node name="ConfigPlayerButton" type="TouchScreenButton" parent="."]
-z_index = 10
-position = Vector2(1064, 176)
+[node name="config_jogador" type="TouchScreenButton" parent="."]
+position = Vector2(40, 96)
+scale = Vector2(1.12, 1.33333)
 texture_normal = ExtResource("12_u3qdq")
 texture_pressed = ExtResource("13_jimcu")
 
@@ -84,4 +84,4 @@ texture_pressed = ExtResource("13_jimcu")
 [connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="ExitGameButton" to="." method="_on_exit_game_button_pressed"]
 [connection signal="pressed" from="Creditos" to="." method="_on_creditos_pressed"]
-[connection signal="pressed" from="ConfigPlayerButton" to="." method="_on_config_player_button_pressed"]
+[connection signal="pressed" from="config_jogador" to="." method="_on_config_jogador_pressed"]

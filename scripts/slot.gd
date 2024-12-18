@@ -23,14 +23,14 @@ func verificar_resposta(_letra: Node2D):
 	var label_slot = $Label.text  # Obtém o texto da label associada ao slot
 	if letra_associada == label_slot:
 		# Se a letra for correta, o slot fica verde
-		$Sprite2D.modulate = Color(0, 1, 0)  # Verde para correta
+		#$Sprite2D.modulate = Color(0, 1, 0)  # Verde para correta
 		print("Correto!")
 		get_tree().root.get_node("Game").registrar_acerto()
 		#ocupada = false
 		SoundManager.play_acerto()
 	else:
 		# Se a letra for incorreta, o slot fica vermelho
-		$Sprite2D.modulate = Color(1, 0, 0)  # Vermelho para incorreta
+		#$Sprite2D.modulate = Color(1, 0, 0)  # Vermelho para incorreta
 		get_tree().root.get_node("Game").registrar_erro()
 		print("Errado!")
 		Arrays.error_num += 1
