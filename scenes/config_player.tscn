@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bomkmite8w22x"]
+[gd_scene load_steps=5 format=3 uid="uid://b2ae3pq2o6ovj"]
 
 [ext_resource type="Script" path="res://scripts/config_player.gd" id="1_k5bxy"]
 [ext_resource type="Texture2D" uid="uid://pv5ohbhbeo8o" path="res://assets/imgs/popup_menu_jogo.webp" id="2_sjq6r"]
@@ -36,6 +36,7 @@ offset_bottom = -6.0
 max_value = 10.0
 
 [node name="SliderDica" type="HSlider" parent="Sprite2D"]
+visible = false
 modulate = Color(1, 0.588235, 0, 1)
 offset_left = -211.686
 offset_top = 65.1341
@@ -55,6 +56,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="Sprite2D"]
+visible = false
 offset_left = -211.686
 offset_top = 37.9949
 offset_right = -48.6859
@@ -87,6 +89,7 @@ text = "0       1       2        3       4       5       6        7       8     
 vertical_alignment = 1
 
 [node name="Label5" type="Label" parent="Sprite2D"]
+visible = false
 offset_left = -211.686
 offset_top = 81.4177
 offset_right = 230.314

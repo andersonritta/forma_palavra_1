@@ -56,13 +56,13 @@ vertical_alignment = 1
 
 [node name="Options" type="TouchScreenButton" parent="."]
 z_index = 10
-position = Vector2(1056, 96)
+position = Vector2(1056, 128)
 scale = Vector2(1.10345, 1.10345)
 texture_normal = ExtResource("4_w4krw")
 texture_pressed = ExtResource("6_85sja")
 
 [node name="ExitGameButton" type="TouchScreenButton" parent="."]
-position = Vector2(1064, 24)
+position = Vector2(1064, 40)
 scale = Vector2(2.4, 2.4)
 texture_normal = ExtResource("9_fffaa")
 texture_pressed = ExtResource("10_aio68")
@@ -75,8 +75,8 @@ texture_normal = ExtResource("8_xd8ie")
 texture_pressed = ExtResource("11_64jyg")
 
 [node name="config_jogador" type="TouchScreenButton" parent="."]
-position = Vector2(40, 96)
-scale = Vector2(1.12, 1.33333)
+position = Vector2(1064, 224)
+scale = Vector2(0.96, 1.14286)
 texture_normal = ExtResource("12_u3qdq")
 texture_pressed = ExtResource("13_jimcu")
 

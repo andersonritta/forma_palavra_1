@@ -26,15 +26,16 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_pjmqv")
 
 [node name="CheckButton" type="CheckButton" parent="Interface"]
-offset_top = 24.0
+offset_top = 104.0
 offset_right = 144.0
-offset_bottom = 51.0
+offset_bottom = 131.0
 action_mode = 0
 text = "Relógio"
 
 [node name="Mutar" type="CheckButton" parent="Interface"]
-offset_right = 44.0
-offset_bottom = 24.0
+offset_top = 40.0
+offset_right = 143.0
+offset_bottom = 67.0
 text = "Mutar Dicas"
 
 [node name="NumVidas" type="Label" parent="Interface"]
@@ -93,8 +94,8 @@ texture_normal = ExtResource("6_xcryc")
 texture_pressed = ExtResource("7_mio5s")
 
 [node name="Menu" type="TouchScreenButton" parent="Interface"]
-position = Vector2(128, 64)
-scale = Vector2(1.28, 1.52381)
+position = Vector2(1056, 64)
+scale = Vector2(0.96, 1.14286)
 texture_normal = ExtResource("8_yl61f")
 texture_pressed = ExtResource("9_nsm44")
 
