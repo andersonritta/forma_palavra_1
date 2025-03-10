@@ -26,12 +26,15 @@ Arrays="*res://scripts/arrays.gd"
 CsvExporter="*res://scripts/csv_exporter.gd"
 SoundManager="*res://scripts/SoundManager.gd"
 ConfigPlayer="*res://scenes/config_player.tscn"
-ConfigPlayerGD="*res://scripts/config_player.gd"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/handheld/orientation=4
+
+[dotnet]
+
+project/assembly_name="New Game Project"
 
 [gui]
 

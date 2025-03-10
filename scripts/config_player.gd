@@ -9,7 +9,6 @@ var numVidas = 5
 var numDicas = 5
 
 func _ready():
-	
 	if slider_vida:
 		slider_vida.value = numVidas
 	if slider_dica:

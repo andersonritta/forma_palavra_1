@@ -5,8 +5,10 @@ var contador_jogo = 1
 
 # Função para exportar resultados para CSV
 func exportar_resultados_csv(resultados_fases, historico_palavras, palavras_formadas, tempos_fases):
+	var caminho_arquivo = "/storage/emulated/0/Documents/dados.csv"
+	
 	# Validação de dados de entrada
-	if not (resultados_fases is Array and historico_palavras is Array and palavras_formadas is Array):
+	if not (resultados_fases is Array and historico_palavras is Array and palavras_formadas is Array and tempos_fases is Array):
 		print("Erro: Os dados fornecidos não são do tipo esperado. Todos devem ser Arrays.")
 		return
 
@@ -15,12 +17,12 @@ func exportar_resultados_csv(resultados_fases, historico_palavras, palavras_form
 		return
 	
 	# Abrir o arquivo CSV em modo de leitura e escrita
-	var file = FileAccess.open("user://resultado_jogo.csv", FileAccess.READ_WRITE)
+	var file = FileAccess.open(caminho_arquivo, FileAccess.READ_WRITE)
 	
 	# Verificar se o arquivo existe e tem conteúdo
 	if file == null:
 		# Se o arquivo não existir, tenta criá-lo
-		file = FileAccess.open("user://resultado_jogo.csv", FileAccess.WRITE)
+		file = FileAccess.open(caminho_arquivo, FileAccess.WRITE)
 		if file == null:
 			print("Erro: Não foi possível criar o arquivo.")
 			return
@@ -33,12 +35,12 @@ func exportar_resultados_csv(resultados_fases, historico_palavras, palavras_form
 	# Se o arquivo está vazio, escreve o cabeçalho
 	if file.get_length() == 0:
 		file.store_line("ID,Fase,Acertos,Erros,Tempo,Palavras Geradas,Palavras Formadas,Resultado")
-	
+
 	# Inicializa as variáveis para os totais
 	var total_acertos = 0
 	var total_erros = 0
 	var tempo_total = 0.0
-	
+
 	# Adiciona os dados do novo jogo ao final do arquivo
 	for i in range(resultados_fases.size()):
 		var resultado = resultados_fases[i]
