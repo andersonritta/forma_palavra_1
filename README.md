@@ -68,6 +68,7 @@ Desenvolver um jogo que estimule o aprendizado e a interação, ao mesmo tempo q
 
 O projeto é organizado da seguinte forma:
 
+```plaintext
 ├── assets
 │   ├── Audio
 │   ├── fonts
