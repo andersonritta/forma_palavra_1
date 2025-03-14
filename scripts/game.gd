@@ -176,7 +176,8 @@ func _ready():
 	$Interface/BotOFase/FaseLabel.text = "Fase " + str(numero_da_fase)
 	$Interface/NumVidas.text = "Vidas: " + str(ConfigPlayer.numVidas)
 	#$Interface/NumDicas.text = "Dicas: " + str(ConfigPlayer.numDicas)
-	var sound_manager = get_node("res://scripts/SoundManager.gd")
+	#var sound_manager = get_node("res://scripts/SoundManager.gd")
+	#var sound_manager = get_node("/root/SoundManager")
 	carregar_imagens()
 	$Interface/TimerLabel.visible = false
 	
@@ -293,29 +294,30 @@ func finalizar_jogo():
 	
 	# Agora, exporta os dados para o CSV utilizando o autoloader
 	CsvExporter.exportar_resultados_csv(resultados_fases, historico_palavras, palavras_formadas, tempos_fases)
+	#CsvExporter.exportar_resultados_csv()
 	
 	ConfigPlayer.numVidas = vidas_iniciais
 	print("Vidas resetadas para: ", ConfigPlayer.numVidas)
 
 
 # Função para calcular o tempo total do jogo
-func calcular_tempo_total(tempos_fases: Array) -> float:
+func calcular_tempo_total(stage_times: Array) -> float:
 	var tempo_total = 0.0
-	for tempo in tempos_fases:
+	for tempo in stage_times:
 		tempo_total += tempo
 	return tempo_total
 
 
 # Função para atualizar os resultados dividindo os acertos e erros por 2
-func atualizar_resultados(resultados_fases: Array):
-	for resultado in resultados_fases:
+func atualizar_resultados(stage_results: Array):
+	for resultado in stage_results:
 		resultado["acertos"] /= 2
 		resultado["erros"] /= 2
 
 
 # Função para exibir os resultados por fase
-func exibir_resultados_fases(resultados_fases: Array):
-	for resultado in resultados_fases:
+func exibir_resultados_fases(stage_results: Array):
+	for resultado in stage_results:
 		print("Fase %d:" % resultado["fase"])
 		print("  Acertos: %d" % resultado["acertos"])
 		print("  Erros: %d" % resultado["erros"])
@@ -326,23 +328,25 @@ func exibir_resultados_fases(resultados_fases: Array):
 
 
 # Função para exibir o histórico das palavras geradas por fase
-func exibir_palavras_geradas(historico_palavras: Array):
+func exibir_palavras_geradas(words_history: Array):
 	print("Palavras geradas por fase:")
-	for i in range(len(historico_palavras)):
-		print("Fase %d: %s" % [i + 1, str(historico_palavras[i])])
+	for i in range(len(words_history)):
+		print("Fase %d: %s" % [i + 1, str(words_history[i])])
 
 
 # Função para exibir as palavras formadas por fase
-func exibir_palavras_formadas(palavras_formadas: Array):
+func exibir_palavras_formadas(formed_words: Array):
 	print("Palavras Formadas por Fase:")
-	for i in range(len(palavras_formadas)):
-		print("Fase %d: %s" % [i + 1, str(palavras_formadas[i])])
+	for i in range(len(formed_words)):
+		print("Fase %d: %s" % [i + 1, str(formed_words[i])])
 
 
 # Função para exibir os totais acumulados
-func exibir_totais_acumulados(total_acertos: int, total_erros: int, tempo_total: float):
-	print("Total de Acertos: %d" % (total_acertos / 2))
-	print("Total de Erros: %d" % (total_erros / 2))
+func exibir_totais_acumulados(hit_total: int, miss_total: int, tempo_total: float):
+	#print("Total de Acertos: %d" % (hit_total / 2))
+	#print("Total de Erros: %d" % (miss_total / 2))
+	print("Total de Acertos:", (hit_total / 2.0))
+	print("Total de Erros:", (miss_total / 2.0))
 	print("Tempo Total do Jogo: %.1f segundos" % tempo_total)
 
 	

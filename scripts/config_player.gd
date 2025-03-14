@@ -1,14 +1,14 @@
 extends CanvasLayer
 
+@onready var slider_vida = $Sprite2D/SliderVida
+@onready var slider_dica = $Sprite2D/SliderDica
+
 var is_paused = false
 
 var numVidas = 5
 var numDicas = 5
 
 func _ready():
-	var slider_vida = get_node("SliderVida")
-	var slider_dica = get_node("SliderDica")
-	
 	if slider_vida:
 		slider_vida.value = numVidas
 	if slider_dica:
